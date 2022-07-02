@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
+    <title>Quiz App</title>
+</head>
+<body>
+    <header id="header">
+        <div id="introduction">
+          <h1>Quiz Challenge</h1>
+          <h2 id="headerText">Please enter your name</h2>
+        </div>
+        <div id="userNameContainer">
+          <input id="userName" name="uName" type="text" />
+  
+          <button id="welcomeBtn">Submit</button>
+        </div>
+      </header>
+      <main>
+        <section class="quiz-area">
+            <div id="questions" class="questions">Questions here</div>
+            <div id="answers-container" class="options">
+                <ul id="answerList">
+                    <li id="answer1"></li>
+                    <li id="answer2"></li>
+                    <li id="answer3"></li>
+                    <li id="answer4"></li>
+                </ul> 
+            </div>
+            <div class="control-area">
+                <div class="nextBtn">
+                    <button id="ext" type='button'>Next</button>
+                </div>
+                <div class="tryAgain">
+                    <button id="tryAgainBtn" type="button" >Try Again</button>
+                </div>
+            </div>
+            <div class="score">Score: <span id="scoreCard">0</span></div>
+            
+
+        </section>
+      </main>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
