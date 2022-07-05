@@ -44,6 +44,25 @@ const gameData = [
   const questionText = document.querySelector("#question");
   const answersContainer = document.querySelector("#answers-container");
 
+  quizContainer.style.display = "none";
+startButton.addEventListener("click", startGame);
+nextButton.addEventListener("click", () => {
+  next();
+});
+
+tryAgainButton.addEventListener("click", () => {
+  location.reload();
+});
+
+function startGame() {
+  bannerText.textContent = "";
+  headerText.textContent = "Hello " + userName.value + ",  welcome to my Quiz.";
+  userNameContainer.style.display = "none";
+  tryAgainButton.style.display = "none";
+  quizContainer.style.display = "flex";
+}
+
+
   function startGame() 
 
   function startQuiz() 
