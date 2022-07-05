@@ -31,6 +31,19 @@ const gameData = [
     },
   ];
 
+  const bannerText = document.querySelector("#banner");
+  const userNameContainer = document.querySelector("#user-name-container");
+  const userName = document.querySelector("#username");
+  
+  const startButton = document.querySelector("#start-button");
+  const nextButton = document.querySelector("#next-button");
+  const answerButton = Array.from(document.querySelectorAll(".answer-button"));
+  const tryAgainButton = document.querySelector("#reload-button");
+  
+  const quizContainer = document.querySelector("#quiz-container");
+  const questionText = document.querySelector("#question");
+  const answersContainer = document.querySelector("#answers-container");
+
   function startGame() 
 
   function startQuiz() 
