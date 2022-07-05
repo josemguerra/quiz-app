@@ -30,4 +30,11 @@ const gameData = [
       answer: 2,
     },
   ];
-  
+
+  function startGame() 
+
+  function startQuiz() 
+
+  function selectedAnswer()
+
+  function next()
