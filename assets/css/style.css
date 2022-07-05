@@ -1,0 +1,42 @@
+:root {
+    --black: black;
+    --midBlue: #318de8;
+    --lightBlue: #00ede4;
+    --lightGreen: #3ffc4f;
+    --greyShadow: #747272b7;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    color: var(--black);
+    width: 100vw;
+    height: 100vh;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(
+      to right top,
+      #3e71fa,
+      #0091ff,
+      #00acff,
+      #00c4ff,
+      #00d8f8,
+      #00e3f2,
+      #00ede4,
+      #00f6d1,
+      #00f9bb,
+      #00fb9e,
+      #00fc7b,
+      #3ffc4f
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

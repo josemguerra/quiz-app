@@ -11,39 +11,47 @@
 <body>
     <header id="header">
         <div id="introduction">
-          <h1>Quiz Challenge</h1>
+          <h1 id="banner">Quiz Challenge</h1>
           <h2 id="headerText">Please enter your name</h2>
         </div>
-        <div id="userNameContainer">
-          <input id="userName" name="uName" type="text" />
-  
-          <button id="welcomeBtn">Submit</button>
+        <div id="user-name-container">
+          <input type="text" id="username" name="username" />
+          <button type="button" id="start-button">START</button>
         </div>
       </header>
-      <main>
-        <section class="quiz-area">
-            <div id="questions" class="questions">Questions here</div>
-            <div id="answers-container" class="options">
-                <ul id="answerList">
-                    <li id="answer1"></li>
-                    <li id="answer2"></li>
-                    <li id="answer3"></li>
-                    <li id="answer4"></li>
-                </ul> 
+      
+        <section id="quiz-container">
+            <div id="question"></div>
+            <div id="answers-container">
+              <button
+                id="answer1"
+                class="answer-button"
+                onclick="selectedAnswer()"
+              ></button>
+              <button
+                id="answer2"
+                class="answer-button"
+                onclick="selectedAnswer()"
+              ></button>
+              <button
+                id="answer3"
+                class="answer-button"
+                onclick="selectedAnswer()"
+              ></button>
+              <button
+                id="answer4"
+                class="answer-button"
+                onclick="selectedAnswer()"
+              ></button>
             </div>
-            <div class="control-area">
-                <div class="nextBtn">
-                    <button id="ext" type='button'>Next</button>
-                </div>
-                <div class="tryAgain">
-                    <button id="tryAgainBtn" type="button" >Try Again</button>
-                </div>
+      
+            <div id="control-buttons">
+              <button type="button" id="next-button">NEXT</button>
+              <button type="button" id="reload-button">TRY AGAIN</button>
             </div>
-            <div class="score">Score: <span id="scoreCard">0</span></div>
-            
-
-        </section>
-      </main>
+            <div class="score-card">SCORE: <span id="scoreCard">0</span></div>
+          </section>
+      
     <script src="assets/js/script.js"></script>
 </body>
 </html>
