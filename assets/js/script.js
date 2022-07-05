@@ -62,11 +62,34 @@ function startGame() {
   quizContainer.style.display = "flex";
 }
 
+let questionIndex = 0;
+let score = 0;
 
-  function startGame() 
+function startQuiz() {
+  const currentGameData = gameData[questionIndex];
+  if (questionIndex < gameData.length) {
+    questionText.innerText = `${questionIndex + 1}. ${
+      currentGameData.question
+    }`;
+    answerButton.forEach(function (answer, index) {
+      answer.innerText = currentGameData.options[index];
+    });
+  } else {
+    answersContainer.style.display = "none";
+    questionText.innerText = "Quiz Completed!";
+    nextButton.style.display = "none";
+    tryAgainButton.style.display = "flex";
+  }
+}
 
-  function startQuiz() 
+function selectedAnswer() {
+  for (let data of gameData) {
+    console.log(data.options);
+  }
+}
 
-  function selectedAnswer()
-
-  function next()
+function next() {
+  questionIndex++;
+  startQuiz();
+}
+startQuiz();
