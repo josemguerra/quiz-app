@@ -1,69 +1,76 @@
 const gameData = [
-    {
-      question:
-        "A small bunch of herbs, tied together, that is added to stews or casseroles for flavour.",
-      options: ["Bouquet garni", "Crudité", "Beignet", "Tuile"],
-      answer: 1,
-    },
-    {
-      question:
-        "French-style, bite-sized sweetmeats and cakes served with coffee.",
-      options: ["Coulis", "Crêpe", "Petits fours", "Canapé"],
-      answer: 3,
-    },
-    {
-      question:
-        "A French term describing the continual tossing of food in shallow fat so that it browns evenly.",
-      options: ["Pan frying", "Basting", "Sautéeing", "Braising"],
-      answer: 3,
-    },
-    {
-      question:
-        "Extracting the flavours of spices or herbs by soaking them in liquid heated in a covered pan.",
-      options: ["Blanching ", "Curdling", "Brine", "Infusing"],
-      answer: 4,
-    },
-    {
-      question:
-        "A French dish that has been sprinkled with sugar and grilled until a caramelized crust has formed on top.",
-      options: ["Julienne", "Brulée", "Caramel", "Flambé"],
-      answer: 2,
-    },
-  ];
+  {
+    question:
+      "A small bunch of herbs, tied together, that is added to stews or casseroles for flavour.",
+    answers: ["Bouquet garni", "Crudité", "Beignet", "Tuile"],
+    correct: 1,
+  },
+  {
+    question:
+      "French-style, bite-sized sweetmeats and cakes served with coffee.",
+    answers: ["Coulis", "Crêpe", "Petits fours", "Canapé"],
+    correct: 3,
+  },
+  {
+    question:
+      "A French term describing the continual tossing of food in shallow fat so that it browns evenly.",
+    answers: ["Pan frying", "Basting", "Sautéeing", "Braising"],
+    correct: 3,
+  },
+  {
+    question:
+      "Extracting the flavours of spices or herbs by soaking them in liquid heated in a covered pan.",
+    answers: ["Blanching ", "Curdling", "Brine", "Infusing"],
+    correct: 4,
+  },
+  {
+    question:
+      "A French dish that has been sprinkled with sugar and grilled until a caramelized crust has formed on top.",
+    answers: ["Julienne", "Brulée", "Caramel", "Flambé"],
+    correct: 2,
+  },
+];
+const bannerText = document.querySelector("#banner");
+const userNameContainer = document.querySelector("#user-name-container");
+const userName = document.querySelector("#username");
+const startButton = document.querySelector("#start-button");
+const nextButton = document.querySelector("#next-button");
+const tryAgainButton = document.querySelector("#reload-button");
+const answerButtons = document.querySelectorAll(".answer-button");
+const quizContainer = document.querySelector("#quiz-container");
+const questionText = document.querySelector("#question");
+const answersContainer = document.querySelector("#answers-container");
+const scoreCard = document.querySelector("#score-card");
+const answer1 = document.querySelector("#answer1");
+const answer2 = document.querySelector("#answer2");
+const answer3 = document.querySelector("#answer3");
+const answer4 = document.querySelector("#answer4");
 
-  const bannerText = document.querySelector("#banner");
-  const userNameContainer = document.querySelector("#user-name-container");
-  const userName = document.querySelector("#username");
-  
-  const startButton = document.querySelector("#start-button");
-  const nextButton = document.querySelector("#next-button");
-  const answerButton = Array.from(document.querySelectorAll(".answer-button"));
-  const tryAgainButton = document.querySelector("#reload-button");
-  
-  const quizContainer = document.querySelector("#quiz-container");
-  const questionText = document.querySelector("#question");
-  const answersContainer = document.querySelector("#answers-container");
+quizContainer.style.display = "none";
 
-  quizContainer.style.display = "none";
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
   next();
 });
-
 tryAgainButton.addEventListener("click", () => {
   location.reload();
 });
+const currentButton = answersContainer
+  .querySelectorAll(".answer-button")
+  .forEach((button, key) => {
+    button.addEventListener("click", selectedAnswer);
+    button.answerId = key + 1;
+  });
 
 function startGame() {
   bannerText.textContent = "";
-  headerText.textContent = "Hello " + userName.value + ",  welcome to my Quiz.";
+  headerText.textContent = `Hello ${userName.value}! welcome to my Quiz.`;
   userNameContainer.style.display = "none";
   tryAgainButton.style.display = "none";
   quizContainer.style.display = "flex";
 }
 
 let questionIndex = 0;
-let score = 0;
 
 function startQuiz() {
   const currentGameData = gameData[questionIndex];
@@ -71,9 +78,10 @@ function startQuiz() {
     questionText.innerText = `${questionIndex + 1}. ${
       currentGameData.question
     }`;
-    answerButton.forEach(function (answer, index) {
-      answer.innerText = currentGameData.options[index];
-    });
+    answer1.innerHTML = currentGameData.answers[0];
+    answer2.innerHTML = currentGameData.answers[1];
+    answer3.innerHTML = currentGameData.answers[2];
+    answer4.innerHTML = currentGameData.answers[3];
   } else {
     answersContainer.style.display = "none";
     questionText.innerText = "Quiz Completed!";
@@ -82,14 +90,32 @@ function startQuiz() {
   }
 }
 
-function selectedAnswer() {
-  for (let data of gameData) {
-    console.log(data.options);
+let scoreIndex = 0;
+
+function selectedAnswer(e) {
+  let currentQuestion = gameData[questionIndex];
+  let currentAnswer = currentQuestion.answer;
+  let currentButton = e.currentTarget.answerId;
+  const currentCorrect = currentQuestion.correct;
+  let isCorrect = currentCorrect === currentButton;
+  if (isCorrect) {
+    scoreIndex++;
+    quizContainer.style.backgroundColor = "green";
+    questionIndex++
+    currentScore();
+  } else {
+    quizContainer.style.backgroundColor = "red";
+    answersContainer.style.pointerEvents = "none";
   }
+}
+function currentScore() {
+  scoreCard.textContent = `${scoreIndex} / ${gameData.length}`;
 }
 
 function next() {
   questionIndex++;
+  quizContainer.style.backgroundColor = "inherit";
+  answersContainer.style.pointerEvents = "auto";
   startQuiz();
 }
 startQuiz();
