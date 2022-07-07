@@ -36,7 +36,6 @@ const userName = document.querySelector("#username");
 const startButton = document.querySelector("#start-button");
 const nextButton = document.querySelector("#next-button");
 const tryAgainButton = document.querySelector("#reload-button");
-const answerButtons = document.querySelectorAll(".answer-button");
 const quizContainer = document.querySelector("#quiz-container");
 const questionText = document.querySelector("#question");
 const answersContainer = document.querySelector("#answers-container");
@@ -46,6 +45,8 @@ const answer2 = document.querySelector("#answer2");
 const answer3 = document.querySelector("#answer3");
 const answer4 = document.querySelector("#answer4");
 
+let scoreIndex = 0;
+let questionIndex = 0;
 quizContainer.style.display = "none";
 
 startButton.addEventListener("click", startGame);
@@ -55,22 +56,40 @@ nextButton.addEventListener("click", () => {
 tryAgainButton.addEventListener("click", () => {
   location.reload();
 });
-const currentButton = answersContainer
-  .querySelectorAll(".answer-button")
-  .forEach((button, key) => {
+
+function next() {
+  questionIndex++;
+  quizContainer.style.backgroundColor = "inherit";
+  activateButtons();
+  startQuiz();
+}
+function activateButtons() {
+  answersContainer.querySelectorAll(".answer-button").forEach((button, key) => {
     button.addEventListener("click", selectedAnswer);
     button.answerId = key + 1;
   });
+}
+function deactivateButtons() {
+  answersContainer.querySelectorAll(".answer-button").forEach((button, key) => {
+    button.removeEventListener("click", selectedAnswer);
+    button.answerId = key + 1;
+  });
+}
+
+// TODO : HIDE NEXT BUTTON TO AVOID SKIP QUESTIONS AND ADD MODAL FOR TOP  SCORERS , ADD MORE QUESTIONS
+// MEDIA QUERIES TO CENTER THE PAGE,, README.. AND TIDY UP
+
+// function deactivateNext() {}
+
 
 function startGame() {
+  activateButtons();
   bannerText.textContent = "";
   headerText.textContent = `Hello ${userName.value}! welcome to my Quiz.`;
   userNameContainer.style.display = "none";
   tryAgainButton.style.display = "none";
   quizContainer.style.display = "flex";
 }
-
-let questionIndex = 0;
 
 function startQuiz() {
   const currentGameData = gameData[questionIndex];
@@ -90,8 +109,6 @@ function startQuiz() {
   }
 }
 
-let scoreIndex = 0;
-
 function selectedAnswer(e) {
   let currentQuestion = gameData[questionIndex];
   let currentAnswer = currentQuestion.answer;
@@ -101,21 +118,14 @@ function selectedAnswer(e) {
   if (isCorrect) {
     scoreIndex++;
     quizContainer.style.backgroundColor = "green";
-    questionIndex++
     currentScore();
   } else {
     quizContainer.style.backgroundColor = "red";
-    answersContainer.style.pointerEvents = "none";
   }
+  deactivateButtons();
 }
 function currentScore() {
   scoreCard.textContent = `${scoreIndex} / ${gameData.length}`;
 }
 
-function next() {
-  questionIndex++;
-  quizContainer.style.backgroundColor = "inherit";
-  answersContainer.style.pointerEvents = "auto";
-  startQuiz();
-}
 startQuiz();
