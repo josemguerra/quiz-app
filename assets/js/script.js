@@ -1,4 +1,7 @@
-const gameData = [
+/**
+ * Database of question and answers for the quiz.
+ */
+ const gameData = [
   {
     question:
       "A small bunch of herbs, tied together, that is added to stews or casseroles for flavour.",
@@ -11,24 +14,24 @@ const gameData = [
     answers: ["Coulis", "Crêpe", "Petits fours", "Canapé"],
     correct: 3,
   },
-  {
-    question:
-      "A French term describing the continual tossing of food in shallow fat so that it browns evenly.",
-    answers: ["Pan frying", "Basting", "Sautéeing", "Braising"],
-    correct: 3,
-  },
-  {
-    question:
-      "Extracting the flavours of spices or herbs by soaking them in liquid heated in a covered pan.",
-    answers: ["Blanching ", "Curdling", "Brine", "Infusing"],
-    correct: 4,
-  },
-  {
-    question:
-      "A French dish that has been sprinkled with sugar and grilled until a caramelized crust has formed on top.",
-    answers: ["Julienne", "Brulée", "Caramel", "Flambé"],
-    correct: 2,
-  },
+  // {
+  //   question:
+  //     "A French term describing the continual tossing of food in shallow fat so that it browns evenly.",
+  //   answers: ["Pan frying", "Basting", "Sautéeing", "Braising"],
+  //   correct: 3,
+  // },
+  // {
+  //   question:
+  //     "Extracting the flavours of spices or herbs by soaking them in liquid heated in a covered pan.",
+  //   answers: ["Blanching ", "Curdling", "Brine", "Infusing"],
+  //   correct: 4,
+  // },
+  // {
+  //   question:
+  //     "A French dish that has been sprinkled with sugar and grilled until a caramelized crust has formed on top.",
+  //   answers: ["Julienne", "Brulée", "Caramel", "Flambé"],
+  //   correct: 2,
+  // },
 ];
 const bannerText = document.querySelector("#banner");
 const userNameContainer = document.querySelector("#user-name-container");
@@ -38,6 +41,7 @@ const nextButton = document.querySelector("#next-button");
 const tryAgainButton = document.querySelector("#reload-button");
 const quizContainer = document.querySelector("#quiz-container");
 const questionText = document.querySelector("#question");
+const alert = document.querySelector("#alert");
 const answersContainer = document.querySelector("#answers-container");
 const scoreCard = document.querySelector("#score-card");
 const answer1 = document.querySelector("#answer1");
@@ -47,8 +51,9 @@ const answer4 = document.querySelector("#answer4");
 
 let scoreIndex = 0;
 let questionIndex = 0;
-quizContainer.style.display = "none";
-
+/**
+ * Event Listeners
+ */
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
   next();
@@ -57,13 +62,6 @@ tryAgainButton.addEventListener("click", () => {
   location.reload();
 });
 
-function next() {
-  questionIndex++;
-  quizContainer.style.backgroundColor = "inherit";
-  activateButtons();
-  hideNexButton()
-  startQuiz();
-}
 function activateButtons() {
   answersContainer.querySelectorAll(".answer-button").forEach((button, key) => {
     button.addEventListener("click", selectedAnswer);
@@ -76,6 +74,13 @@ function deactivateButtons() {
     button.answerId = key + 1;
   });
 }
+function hideQuiz() {
+  quizContainer.style.display = "none";
+}
+hideQuiz();
+function displayQuiz() {
+  quizContainer.style.display = "flex";
+}
 function hideNexButton() {
   nextButton.style.display = "none";
 }
@@ -85,11 +90,12 @@ function displayNexButton() {
 
 function startGame() {
   activateButtons();
+  hideNexButton();
   bannerText.textContent = "";
-  headerText.textContent = `Hello ${userName.value}! welcome to my Quiz.`;
+  welcomeText.textContent = `Hello ${userName.value}! welcome to my Quiz.`;
   userNameContainer.style.display = "none";
   tryAgainButton.style.display = "none";
-  quizContainer.style.display = "flex";
+  displayQuiz();
 }
 
 function startQuiz() {
@@ -105,17 +111,18 @@ function startQuiz() {
   } else {
     answersContainer.style.display = "none";
     questionText.innerText = "Quiz Completed!";
-    hideNexButton()    
+    welcomeText.textContent = "";
+
+    hideNexButton();
     tryAgainButton.style.display = "flex";
   }
 }
 
 function selectedAnswer(e) {
   let currentQuestion = gameData[questionIndex];
-  let currentAnswer = currentQuestion.answer;
   let currentButton = e.currentTarget.answerId;
-  const currentCorrect = currentQuestion.correct;
-  let isCorrect = currentCorrect === currentButton;
+  const currentAnswer = currentQuestion.correct;
+  let isCorrect = currentAnswer === currentButton;
   if (isCorrect) {
     scoreIndex++;
     quizContainer.style.backgroundColor = "green";
@@ -123,16 +130,27 @@ function selectedAnswer(e) {
   } else {
     quizContainer.style.backgroundColor = "red";
   }
-  displayNexButton()
+  displayNexButton();
   deactivateButtons();
+}
+function next() {
+  questionIndex++;
+  quizContainer.style.backgroundColor = "inherit";
+  activateButtons();
+  hideNexButton();
+  startQuiz();
+  fullScore();
 }
 function currentScore() {
   scoreCard.textContent = `${scoreIndex} / ${gameData.length}`;
 }
+function thankYouMessage() {
+  thankYouText.textContent = `Thank you for taking my Quiz ${userName.value}!`;
+}
 /**
  * This is a modal that will display if the user get all questions right
  */
- function fullScore() {
+function fullScore() {
   if (scoreIndex === gameData.length) {
     alert.classList.add("active");
     hideQuiz();
@@ -146,5 +164,5 @@ function currentScore() {
   }
 }
 
-
 startQuiz();
+
