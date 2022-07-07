@@ -10,18 +10,19 @@
 </head>
 <body>
     <header id="header">
-        <div id="introduction">
-          <h1 id="banner">Quiz Challenge</h1>
-          <h2 id="headerText">Please enter your name</h2>
-        </div>
-        <div id="user-name-container">
-          <input type="text" id="username" name="username" />
-          <button type="button" id="start-button">START</button>
-        </div>
+      <div id="introduction">
+        <h1 id="banner">Cooking Quiz</h1>
+        <h2 id="welcomeText">Please enter your name</h2>
+        <h3 id="thankYouText"></h3>
+      </div>
+      <div id="user-name-container">
+        <input type="text" id="username" name="username" />
+        <button type="button" id="start-button">START</button>
+      </div>
       </header>
       <div id="alert">
         <div class="alert-title">Congratulations!!</div>
-        You got them all right!
+        You got them all right Chef
       </div>
       <section id="quiz-container">
         <div id="question"></div>
@@ -37,9 +38,8 @@
             <p>score:</p>
             <span id="score-card">0</span>
           </div>
-          <button type="button" id="next-button">NEXT</button>
-          <button type="button" id="reload-button">TRY AGAIN</button>
+          <input type="button" id="next-button" value="NEXT"></input>
+          <input type="button" id="reload-button" value="TRY AGAIN"></input>
         </div>
-    <script src="assets/js/script.js"></script>
 </body>
 </html>

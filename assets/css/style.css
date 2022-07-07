@@ -60,6 +60,9 @@ input[type="text"] {
   border-radius: 4px;
   font-size: 0.75rem;
 }
+#thankYouText {
+  font-size: 170%;
+}
 #quiz-container {
   display: flex;
   flex-direction: column;
@@ -124,7 +127,7 @@ align-self: center;
   width: 100%;
   padding: 10px;
   line-height: 1;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .score-card span {

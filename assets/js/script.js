@@ -54,13 +54,27 @@ let questionIndex = 0;
 /**
  * Event Listeners
  */
-startButton.addEventListener("click", startGame);
+  document.addEventListener("DOMContentLoaded", () => {});
+
+  startButton.addEventListener("click", e => {
+    e.preventDefault(), validateUser();
+  });
 nextButton.addEventListener("click", () => {
   next();
 });
 tryAgainButton.addEventListener("click", () => {
   location.reload();
 });
+function validateUser() {
+  const userVal = document.querySelector("#username");
+  if (userVal.value == "") {
+    document.getElementById("welcomeText").style.color = "red";
+    userName.focus();
+  } else {
+    document.getElementById("welcomeText").style.color = "black";
+    startGame();
+  }
+}
 
 function activateButtons() {
   answersContainer.querySelectorAll(".answer-button").forEach((button, key) => {
