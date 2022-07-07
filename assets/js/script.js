@@ -129,5 +129,22 @@ function selectedAnswer(e) {
 function currentScore() {
   scoreCard.textContent = `${scoreIndex} / ${gameData.length}`;
 }
+/**
+ * This is a modal that will display if the user get all questions right
+ */
+ function fullScore() {
+  if (scoreIndex === gameData.length) {
+    alert.classList.add("active");
+    hideQuiz();
+    setTimeout(() => {
+      alert.classList.remove("active");
+    }, 2500);
+    setTimeout(() => {
+      displayQuiz();
+      thankYouMessage();
+    }, 2700);
+  }
+}
+
 
 startQuiz();
