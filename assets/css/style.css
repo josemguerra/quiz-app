@@ -134,15 +134,4 @@ button.answer-button {
   color: black;
   border-radius: 8px;
 }
-.correct {
-  background-color: #8bce26;
-}
-.incorrect {
-  background-color: #e11212;
-}
-.hide {
-  display: none;
-}
-.show {
-  display: flex;
-}
+

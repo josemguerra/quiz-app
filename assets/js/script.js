@@ -61,6 +61,7 @@ function next() {
   questionIndex++;
   quizContainer.style.backgroundColor = "inherit";
   activateButtons();
+  hideNexButton()
   startQuiz();
 }
 function activateButtons() {
@@ -75,12 +76,12 @@ function deactivateButtons() {
     button.answerId = key + 1;
   });
 }
-
-// TODO : HIDE NEXT BUTTON TO AVOID SKIP QUESTIONS AND ADD MODAL FOR TOP  SCORERS , ADD MORE QUESTIONS
-// MEDIA QUERIES TO CENTER THE PAGE,, README.. AND TIDY UP
-
-// function deactivateNext() {}
-
+function hideNexButton() {
+  nextButton.style.display = "none";
+}
+function displayNexButton() {
+  nextButton.style.display = "flex";
+}
 
 function startGame() {
   activateButtons();
@@ -122,6 +123,7 @@ function selectedAnswer(e) {
   } else {
     quizContainer.style.backgroundColor = "red";
   }
+  displayNexButton()
   deactivateButtons();
 }
 function currentScore() {
