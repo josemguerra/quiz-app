@@ -105,7 +105,7 @@ function startQuiz() {
   } else {
     answersContainer.style.display = "none";
     questionText.innerText = "Quiz Completed!";
-    nextButton.style.display = "none";
+    hideNexButton()    
     tryAgainButton.style.display = "flex";
   }
 }

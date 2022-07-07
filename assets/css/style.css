@@ -102,7 +102,7 @@ button.answer-button {
 }
 #control-buttons {
   display: flex;
-  justify-content: center;
+  align-self: center;
 }
 
 #start-button,
@@ -120,7 +120,7 @@ button.answer-button {
 
 .score-card {
   display: flex;
-  justify-content: center;
+align-self: center;
   width: 100%;
   padding: 10px;
   line-height: 1;
@@ -128,8 +128,10 @@ button.answer-button {
 }
 
 .score-card span {
+  display: flex;
+  align-self: center;
   background-color: var(--lightGreen);
-  padding: 1.5px 10px;
+  padding: .6rem;
   border: none;
   color: black;
   border-radius: 8px;
