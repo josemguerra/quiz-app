@@ -137,3 +137,28 @@ align-self: center;
   border-radius: 8px;
 }
 
+.alert-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+#alert {
+  font-size: 1.25rem;
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 2rem;
+  background-color: hsl(100, 84%, 52%);
+  border-radius: 0.5rem;
+  color: hsl(100, 80%, 20%);
+}
+
+#alert.active {
+  display: block;
+}
+
+
