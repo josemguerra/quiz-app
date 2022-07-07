@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/script.js" defer></script>
-    <title>Quiz App</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
+  <title>Quiz App</title>
 </head>
+
 <body>
-    <header id="header">
-      <div id="introduction">
-        <h1 id="banner">Cooking Quiz</h1>
-        <h2 id="welcomeText">Please enter your name</h2>
-        <h3 id="thankYouText"></h3>
+  <header id="header">
+    <div id="introduction">
+      <h1 id="banner">Cooking Quiz</h1>
+      <h2 id="welcomeText">Please enter your name</h2>
+      <h3 id="thankYouText"></h3>
+    </div>
+    <div id="user-name-container">
+      <input type="text" id="username" name="username" />
+      <button type="button" id="start-button">START</button>
+    </div>
+  </header>
+  <div id="alert">
+    <div class="alert-title">Congratulations!!</div>
+    You got them all right Chef!!
+  </div>
+  <section id="quiz-container">
+    <div id="question"></div>
+    <div id="answers-container">
+      <button id="answer1" class="answer-button"></button>
+      <button id="answer2" class="answer-button"></button>
+      <button id="answer3" class="answer-button"></button>
+      <button id="answer4" class="answer-button"></button>
+    </div>
+
+    <div id="control-buttons">
+      <div class="score-card">
+        <p>score:</p>
+        <span id="score-card">0</span>
       </div>
-      <div id="user-name-container">
-        <input type="text" id="username" name="username" />
-        <button type="button" id="start-button">START</button>
-      </div>
-      </header>
-      <div id="alert">
-        <div class="alert-title">Congratulations!!</div>
-        You got them all right Chef
-      </div>
-      <section id="quiz-container">
-        <div id="question"></div>
-        <div id="answers-container">
-          <button id="answer1" class="answer-button"></button>
-          <button id="answer2" class="answer-button"></button>
-          <button id="answer3" class="answer-button"></button>
-          <button id="answer4" class="answer-button"></button>
-        </div>
-  
-        <div id="control-buttons">
-          <div class="score-card">
-            <p>score:</p>
-            <span id="score-card">0</span>
-          </div>
-          <input type="button" id="next-button" value="NEXT"></input>
-          <input type="button" id="reload-button" value="TRY AGAIN"></input>
-        </div>
+      <input type="button" id="next-button" value="NEXT"></input>
+      <input type="button" id="reload-button" value="TRY AGAIN"></input>
+    </div>
 </body>
+
 </html>
