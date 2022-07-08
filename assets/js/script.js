@@ -87,7 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
 //  Event listeners control butttons
 
 startButton.addEventListener("click", e => {
-  e.preventDefault(), validateUser();
+  e.preventDefault(), userName.focus();
+});
+userName.addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    validateUser();
+  }
 });
 userName.addEventListener("keydown", e => {
   if (e.key === "Enter") {
@@ -109,7 +114,7 @@ function validateUser() {
   const userVal = document.querySelector("#username");
   if (userVal.value == "") {
     document.getElementById("welcomeText").style.color = "red";
-    userName.focus();
+    
   } else {
     document.getElementById("welcomeText").style.color = "black";
     startGame();
