@@ -1,13 +1,16 @@
 :root {
   --black: black;
-  --lightBrown: #ffc000;
-  --beigeWood: #e2ddd396;
+  --light-brown: #ffc000;
+  --beige-wood: #e2ddd396;
   --beige: #ffdf7d8a;
-  --greenLeaf: #22d21f;
-  --greyShadow: #747272b7;
-  --correctGreen: #20aa20;
-  --brightGreen: #22d21f;
-  --fadedBlue: #01355385;
+  --green-leaf: #22d21f;
+  --grey-shadow: #747272b7;
+  --correct-answers: #20aa20;
+  --bright-green: #22d21f;
+  --faded-blue: #01355385;
+  --wrong-answer: #f40103;
+  --orange-button: #f67945;
+  --green-button: #8ab444;
 }
 
 * {
@@ -70,7 +73,7 @@ input[type="text"] {
   padding: 15px;
   border-radius: 8px;
   color: var(--black);
-  background-color: var(--beigeWood);
+  background-color: var(--beige-wood);
   box-shadow: 5px 10px 8px 10px #747272b7;
 }
 
@@ -83,10 +86,10 @@ input[type="text"] {
 #question {
   display: flex;
   justify-content: center;
-  background-color: var(--lightBrown);
+  background-color: var(--light-brown);
   border-radius: 8px;
   font-weight: bold;
-  border: 2px groove;
+  border: 4px ridge;
   color: var(--black);
   padding: 20px;
   font-size: 100%;
@@ -97,6 +100,7 @@ button.answer-button {
   width: 75%;
   padding: 15px;
   border-radius: 8px;
+  border: 2px solid var(--faded-blue);
   margin: 10px;
   color: var(--black);
   font-weight: bold;
@@ -118,7 +122,7 @@ button.answer-button {
   font-size: small;
   font-weight: bold;
   margin: 1rem;
-  background-color: var(--greenLeaf);
+  background-color: var(--green-leaf);
   padding: 0.7rem;
   border: none;
   border-radius: 4px;
@@ -137,7 +141,7 @@ button.answer-button {
 .score-card span {
   display: flex;
   align-self: center;
-  background-color: var(--greenLeaf);
+  background-color: var(--green-leaf);
   padding: .6rem;
   border: none;
   color: black;
@@ -161,9 +165,9 @@ button.answer-button {
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 2rem;
-  background-color: var(--fadedBlue);
+  background-color: var(--faded-blue);
   border-radius: 0.5rem;
-  color: var(--brightGreen)
+  color: var(--bright-green)
 }
 
 #modal-message.active {

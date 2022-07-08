@@ -81,7 +81,8 @@ let questionIndex = 0;
 //  // Wait for the DOM to finish loading before running the game.
 
 document.addEventListener("DOMContentLoaded", () => {
-  (feedbackText.textContent = ''), userName.focus();
+  userName.focus(),
+  (feedbackText.textContent = '') ;
 
 });
 //  Event listeners control buttons
