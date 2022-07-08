@@ -81,24 +81,20 @@ let questionIndex = 0;
 //  // Wait for the DOM to finish loading before running the game.
 
 document.addEventListener("DOMContentLoaded", () => {
-  feedbackText.textContent = '', userName.focus();
+  (feedbackText.textContent = ''), userName.focus();
 
 });
 //  Event listeners control buttons
 
 startButton.addEventListener("click", e => {
-  e.preventDefault(), userName.focus();
+  e.preventDefault(),validateUser();
 });
 userName.addEventListener("keydown", e => {
   if (e.key === "Enter") {
     validateUser();
   }
 });
-userName.addEventListener("keydown", e => {
-  if (e.key === "Enter") {
-    validateUser();
-  }
-});
+
 nextButton.addEventListener("click", () => {
   next();
 });
@@ -170,7 +166,7 @@ function startGame() {
   activateButtons();
   hideNexButton();
   bannerText.textContent = "";
-  welcomeText.textContent = `Hello ${userName.value}! welcome to my Quiz.`;
+  welcomeText.textContent = `Hello ${userName.value}, welcome!`;
   userNameContainer.style.display = "none";
   tryAgainButton.style.display = "none";
   displayQuiz();
@@ -221,7 +217,7 @@ function selectedAnswer(e) {
 
 function next() {
   questionIndex++;
-  quizContainer.style.backgroundColor = "inherit";
+  quizContainer.style.backgroundColor = "";
   activateButtons();
   hideNexButton();
   startQuiz();
