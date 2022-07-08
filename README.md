@@ -1,8 +1,8 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![QA logo](favicon.ico)
 
 # Quiz App - Javascript (PP-2)
 
-[Deployed live website here](https://josemguerra.github.io/quiz-app/)## Technologies
+[Live website here](https://josemguerra.github.io/quiz-app/)
 
 ## Technologies
 
@@ -27,7 +27,7 @@
 navigation to social media links in the footer.
 - [Simple Images Converter](https://www.simpleimageresizer.com/online-image-converter)
   - Is a image format converter Application to optimize images.
-
+  
 - [Code Beautify](https://codebeautify.org/)
 
   - Is a software that help beautify the code resulting in reducing data an improving performance.
