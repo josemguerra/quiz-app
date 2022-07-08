@@ -10,6 +10,7 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0 auto;
   padding: 0;
@@ -23,21 +24,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(
-    to right top,
-    #3e71fa,
-    #0091ff,
-    #00acff,
-    #00c4ff,
-    #00d8f8,
-    #00e3f2,
-    #00ede4,
-    #00f6d1,
-    #00f9bb,
-    #00fb9e,
-    #00fc7b,
-    #3ffc4f
-  );
+  background-image: linear-gradient(to right top,
+      #3e71fa,
+      #0091ff,
+      #00acff,
+      #00c4ff,
+      #00d8f8,
+      #00e3f2,
+      #00ede4,
+      #00f6d1,
+      #00f9bb,
+      #00fb9e,
+      #00fc7b,
+      #3ffc4f);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -48,11 +47,13 @@ header {
   font-size: 75%;
   text-align: center;
 }
+
 #user-name-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 input[type="text"] {
   width: 60%;
   padding: 10px 15px;
@@ -60,9 +61,13 @@ input[type="text"] {
   border-radius: 4px;
   font-size: 0.75rem;
 }
-#thankYouText {
+
+#feedback-text {
   font-size: 170%;
 }
+
+/*  Quiz area  */
+
 #quiz-container {
   display: flex;
   flex-direction: column;
@@ -74,11 +79,13 @@ input[type="text"] {
   background-color: var(--lightBlue);
   box-shadow: 5px 10px 8px 10px #747272b7;
 }
+
 #answers-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 #question {
   display: flex;
   justify-content: center;
@@ -89,6 +96,7 @@ input[type="text"] {
   padding: 20px;
   font-size: 100%;
 }
+
 button.answer-button {
   justify-content: center;
   width: 75%;
@@ -100,9 +108,13 @@ button.answer-button {
   box-shadow: 0px 3px 0px 3px #747272b7;
   cursor: pointer;
 }
+
 .answer-button:hover {
   background-color: var(--lightBlue);
 }
+
+/* Control buttons and score area */
+
 #control-buttons {
   display: flex;
   align-self: center;
@@ -123,7 +135,7 @@ button.answer-button {
 
 .score-card {
   display: flex;
-align-self: center;
+  align-self: center;
   width: 100%;
   padding: 10px;
   line-height: 1;
@@ -140,13 +152,15 @@ align-self: center;
   border-radius: 8px;
 }
 
+/* Modal  */
+
 .alert-title {
   font-weight: bold;
   margin-bottom: 0.5rem;
   font-size: 2rem;
 }
 
-#alert {
+#modal-message {
   font-size: 1.25rem;
   position: absolute;
   display: none;
@@ -160,8 +174,6 @@ align-self: center;
   color: hsl(100, 80%, 20%);
 }
 
-#alert.active {
+#modal-message.active {
   display: block;
 }
-
-
