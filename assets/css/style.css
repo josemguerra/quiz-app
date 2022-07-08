@@ -1,10 +1,13 @@
 :root {
   --black: black;
-  --midBlue: #318de8;
-  --lightBlue: #00d8f8;
-  --green: #00ede4;
-  --lightGreen: #3ffc4f;
+  --lightBrown: #ffc000;
+  --beigeWood: #e2ddd396;
+  --beige: #ffdf7d8a;
+  --greenLeaf: #22d21f;
   --greyShadow: #747272b7;
+  --correctGreen: #20aa20;
+  --brightGreen: #22d21f;
+  --fadedBlue: #01355385;
 }
 
 * {
@@ -24,27 +27,18 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to right top,
-      #3e71fa,
-      #0091ff,
-      #00acff,
-      #00c4ff,
-      #00d8f8,
-      #00e3f2,
-      #00ede4,
-      #00f6d1,
-      #00f9bb,
-      #00fb9e,
-      #00fc7b,
-      #3ffc4f);
+  background-image: url("../images/wooden-surface.webp");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  
 }
 
 /* Header and Input section */
 
 header {
-  font-size: 75%;
+  font-size: 80%;
   text-align: center;
 }
 
@@ -76,7 +70,7 @@ input[type="text"] {
   padding: 15px;
   border-radius: 8px;
   color: var(--black);
-  background-color: var(--lightBlue);
+  background-color: var(--beigeWood);
   box-shadow: 5px 10px 8px 10px #747272b7;
 }
 
@@ -89,9 +83,10 @@ input[type="text"] {
 #question {
   display: flex;
   justify-content: center;
-  background-color: var(--midBlue);
+  background-color: var(--lightBrown);
   border-radius: 8px;
-  border: 1px groove;
+  font-weight: bold;
+  border: 2px groove;
   color: var(--black);
   padding: 20px;
   font-size: 100%;
@@ -104,13 +99,10 @@ button.answer-button {
   border-radius: 8px;
   margin: 10px;
   color: var(--black);
-  background-color: var(--green);
+  font-weight: bold;
+  background-color: var(--beige);
   box-shadow: 0px 3px 0px 3px #747272b7;
   cursor: pointer;
-}
-
-.answer-button:hover {
-  background-color: var(--lightBlue);
 }
 
 /* Control buttons and score area */
@@ -126,7 +118,7 @@ button.answer-button {
   font-size: small;
   font-weight: bold;
   margin: 1rem;
-  background-color: var(--lightGreen);
+  background-color: var(--greenLeaf);
   padding: 0.7rem;
   border: none;
   border-radius: 4px;
@@ -145,7 +137,7 @@ button.answer-button {
 .score-card span {
   display: flex;
   align-self: center;
-  background-color: var(--lightGreen);
+  background-color: var(--greenLeaf);
   padding: .6rem;
   border: none;
   color: black;
@@ -169,9 +161,9 @@ button.answer-button {
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 2rem;
-  background-color: hsl(100, 84%, 52%);
+  background-color: var(--fadedBlue);
   border-radius: 0.5rem;
-  color: hsl(100, 80%, 20%);
+  color: var(--brightGreen)
 }
 
 #modal-message.active {

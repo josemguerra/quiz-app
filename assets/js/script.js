@@ -81,10 +81,10 @@ let questionIndex = 0;
 //  // Wait for the DOM to finish loading before running the game.
 
 document.addEventListener("DOMContentLoaded", () => {
-  feedbackText.textContent = '';
+  feedbackText.textContent = '', userName.focus();
 
 });
-//  Event listeners control butttons
+//  Event listeners control buttons
 
 startButton.addEventListener("click", e => {
   e.preventDefault(), userName.focus();
@@ -162,7 +162,7 @@ function displayNexButton() {
 }
 /**
  * This will hide Username Input and Start button, and display the Quiz questions as well as answer buttons  and Score area.
- * It will display a welcome message with the choosen username.
+ * It will display a welcome message with the chosen username.
  * It will hide quiz banner text.
  * It will hide try again button to avoid page reload without answering all the questions.
  */
@@ -198,8 +198,8 @@ function startQuiz() {
   }
 }
 /**
- * Check that the button pressed correcponde with the correct answer.
- * If it is correct,incrememts score by one and changes background color to green.
+ * Check that the button pressed is linked with the correct answer.
+ * If it is correct,increments score by one and changes background color to green.
  * Otherwise will change background color to red .
  */
 function selectedAnswer(e) {
@@ -228,7 +228,7 @@ function next() {
   fullScore();
 }
 /**
- * Calcutale Score by comparing number questions that had been answered correctly against the total amount.
+ * Calcutaled Score by comparing number questions that had been answered correctly against the total amount.
  */
 function currentScore() {
   scoreCard.textContent = `${scoreIndex} / ${gameData.length}`;
