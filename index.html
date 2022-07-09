@@ -25,7 +25,8 @@
     <!-- Username input and submit button -->
 
     <div id="user-name-container">
-      <input type="text" id="username" name="username" />
+      <label for="username">
+      <input type="text" id="username" name="username" aria-label="username input box" /></label>
       <button type="submit" id="start-button">START</button>
     </div>
   </header>
@@ -37,10 +38,10 @@
   <div id="quiz-container">
     <div id="question">This is the question</div>
     <div id="answers-container">
-      <button id="answer1" class="answer-button">Answer 1</button>
-      <button id="answer2" class="answer-button">Answer 2</button>
-      <button id="answer3" class="answer-button">Answer 3</button>
-      <button id="answer4" class="answer-button">Answer 4</button>
+      <button id="answer1" class="answer-button" aria-label="answer 1 button">Answer 1</button>
+      <button id="answer2" class="answer-button" aria-label="answer 2 button">Answer 2</button>
+      <button id="answer3" class="answer-button" aria-label="answer 3 button">Answer 3</button>
+      <button id="answer4" class="answer-button" aria-label="answer 4 button">Answer 4</button>
     </div>
     <!-- Control and score card -->
 
@@ -49,8 +50,10 @@
         <p>score:</p>
         <span id="score-card">0</span>
       </div>
-      <input type="button" id="next-button" value="NEXT" />
-      <input type="button" id="reload-button" value="TRY AGAIN" />
+      <label for="next-button">
+      <input type="button" id="next-button" value="NEXT" aria-label="next button" /></label>
+      <label for="reload-button">
+      <input type="button" id="reload-button" value="TRY AGAIN" aria-label="reload button"/></label>
     </div>
   </div>
 </body>

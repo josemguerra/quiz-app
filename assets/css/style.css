@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Space+Mono&display=swap');
 :root {
   --black: black;
   --light-brown: #ffc000;
@@ -20,7 +21,7 @@
 body {
   margin: 0 auto;
   padding: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Space Mono', monospace, sans-serif;
   font-size: 1rem;
   color: var(--black);
   width: 100vw;
@@ -41,7 +42,8 @@ body {
 /* Header and Input section */
 
 header {
-  font-size: 80%;
+  font-size: 140%;
+  font-family: 'Concert One', cursive, sans-serif;
   text-align: center;
 }
 
