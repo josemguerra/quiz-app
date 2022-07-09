@@ -1,6 +1,6 @@
-![QA logo](favicon.ico)
-
 # Quiz App - Javascript (PP-2)
+
+![QA logo](favicon.ico)
 
 [Live website here](https://josemguerra.github.io/quiz-app/)
 
@@ -12,14 +12,14 @@ This Website is the 2st out of five Personal Projects for the Code Institute's  
 with e-Commerce applications. It is built using HTML5, CSS and vanilla JAVASCRIPT
 The last update to this file was: **JuLY 8, 2022**
 
-This project is an educational online quiz that will help the user to sharpen or to learn new professional cooking terminology.
+This project is an educational online quiz that will help the user to sharpen or even learn new professional cookery terminology.
 
 ## Target user
 
 ### The target user for the website is
 
 - English speaker.
-- Interested in a quizzes or in cooking.
+- Interested in a quizzes and/or cooking.
 
 ### User of this website are browsing for
 
@@ -33,12 +33,15 @@ This project is an educational online quiz that will help the user to sharpen or
 
 - I want to navigate the site easily.
 - I want to find the content I am looking for.
-- I want to be challenge.
-- I want it to be interactive and I want to get feedbacks.
+- I want to be challenged.
+- I want it to be interactive.
+- I want to get feedback when I answer a question correctly or incorrectly.
+- I want to keep track of my score.
 - I want to be able to view the content in my mobile phone.
 
 ### As a returning user
 
+- I want to see a feature if I answer all question correctly.
 - I want to be able to contact through social media.                     ( SOCIAL MEDIA ICONS ---WORK IN PROGRESS - BRANCHING ))))))))
 - I want to be able to fill in a form to ask questions.
 
@@ -50,28 +53,25 @@ Main font used in the App is Space Mono which has excellent readability features
 
 ### Layout
 
-The website is one page fully responsive layout.
+The website is one page with a fully responsive layout.
 
-![Once page]()
+### Landing page
 
-### Home page
+The user will land to a page with a full screen image of a wooden table on top of which the is a chef knife on the bottom left corner and a bunch of cooking herbs on the top right corner of the screen, there is also a main heading with the title 'cooking quiz' making it clear to the user  of what the website is about. Bellow the heading there is a username input that the user is required to fill in order to gain access to the quiz. Once filled in and submitted, this data is used to personalized a welcome message for the user.
 
-The user will be greated with full page image of a wooden table on top of which the is a chef knife on the bottom left corner and a bunch of cooking herbs on the top right corner of the screen, there is also a main heading with the title 'cooking quiz' making it clear to the user  of what the website is about. Bellow the heading there is a username input that the user is required to fill in.
+![Home page nav](#)                    ((((((RESPONSIVE  NAVIGATION ---- WORK I PROGRESS - BRANCHING))))))
 
-![Home page nav](#)                    ((((((RESPONSIVE SLIDE NAVIGATION---- WORK I PROGRESS - BRANCHING))))))
+### Quiz section
 
-### About section
+This is the main section of the website. The quiz section  will feature a card with a question on the top and four possible answers encapsulated in the form of a button. When the user press a button with the selected answer will get immediate feedback. The background will turn green if the answer is correct and red is the answer is incorrect. The score will also be updated showing the user newly achieved score and the total amount of question. The button next will appear so the user can move onto the next question and so on.
 
-Under the hero image it is the about section where the user will see and introduction of what artificial grass is and  a graphic showing how it is made.
+### Features
 
-### Project section
-
-This is the main section of the website with key information. The project page will feature a explanatory video showcasing the how-to installation of artificial grass. This is one of the resources i used myself when i did the project and the user will find it very beneficial, followed by images of the before and after the project.
-Below  that is a detailed description and images of the 8 more important steps to install artificial grass in a professional manner. Images where taken during the process of doing the project, except three of them pictures that are screenshot of the video because i found it would graphically explain more clear the step described.
+A modal message will pop congratulating the user if he/she achieve the maximum score.
 
 ### Contact page
 
-In the contact page the user will find a custom made contact form, with the purpose of facilitating the user with a tool to communicate and express his/her opinion or suggestions.        (((((((((( CONTACT FORM - WITH VALIDATION --- WORK IN PROGRESS - BRANCHING)))))))))))))))))
+In the contact page the user will find a custom made contact form, with the purpose of facilitating the user with a tool to communicate and express his/her opinion or suggestions.        (((((((((( CONTACT FORM - WITH VALIDATION --- WORK IN PROGRESS - NEW BRANCH)))))))))))))))))
 
 ![contact form](#)
 
@@ -84,7 +84,7 @@ In the contact page the user will find a custom made contact form, with the purp
 - [JAVASCRIPT](https://www.w3schools.com/js/default.asp)
   - This project uses javascript language add interactivity the website.
 - [Github](https://github.com/)
-  - GithHub is the site used to store the source code for the Website.
+  - GitHub is the site used to store the source code for the Website.
 - [Git](https://git-scm.com/)
   - Git is the  version control software used to commit and push code to the GitHub repository where the source code is stored.
 - [Visual Studio Code](https://code.visualstudio.com/)
@@ -123,7 +123,7 @@ In the contact page the user will find a custom made contact form, with the purp
 
   - Input fields in the form are working as expected, eg. if user miss to fill a required field an error message pops up.
 
-  - When the form is filled correctly a new window opens confirming that the form has been correctly submitted.
+  - When the form is filled correctly a new window opens confirming that the form has been correctly submitted.  ((((((((((((WORK IN PROGRESS - NEW BRANCH))))))))))))
 
 - ### HTML and CSS
 
@@ -133,17 +133,17 @@ In the contact page the user will find a custom made contact form, with the purp
 
   - Readable colour scheme checker
 
-  - Welcome page checker
+    - Welcome page.
 
     - ![Welcome page](readme-images/contrast-checker1.png)
 
-  - Quiz section
+    - Quiz section.
 
-    - ![Quiz section](readme-images/contrast-checker2.png)
+      - ![Quiz section](readme-images/contrast-checker2.png)
 
-  - Wrong answers contrast
+    - Wrong answers contrast
 
-    - ![Wrong answers contrast](readme-images/contrast-checker3.png)
+      - ![Wrong answers contrast](readme-images/contrast-checker3.png)
 
   - CSS validation
 
@@ -151,29 +151,27 @@ In the contact page the user will find a custom made contact form, with the purp
 
   - JSHINT validation
 
-    -![JSHINT validation](readme-images/jshint-validation.png)  
+    - ![JSHINT validation](readme-images/jshint-validation.png)  
 
   - Lighthouse Test
 
     - ![lighthouse test](readme-images/lighthouse-test.png)
 
-  - Compability test
+  - Compatibility test
 
     - The website had been tested on Windows-10, Mac Os, Android phone, Safari, Google Chrome with no errors reported.
 
 ### Bugs report
 
-- lighthouse reported missing label in input field.
+- User can skip question without answering them.
+  - solution: hide next button between questions.
 
-  - solution: added width and height measurements and change image extension to .webp.
-
-- Error on planing initial layout and  i couldn't make it work in mobile screen size.
-
-  - solution: started the project with a mobile first approach.
+- Lighthouse test reported missing labels in input fields.
+  - solution: added labels to input tags.
 
 ## Wireframe
 
-- It has been some changes from the initial sketche.
+- It has been some changes from the initial sketch to improve the visual design.
 
   - ![Wireframe](readme-images/balsamiq-website.png)
   - ![Wireframe](readme-images/balsamiq-tablet.png)
@@ -187,9 +185,9 @@ In the contact page the user will find a custom made contact form, with the purp
   - In the GitHub repository, navigate to the "Settings" tab.
   - Go to  "Pages" on the left hand menu.
   - Under "Source", select "Main" in the dropdown menu.
-  - Next to select "Root" in the right dropdrown menu.
+  - Next to select "Root" in the right drop drown menu.
   - Click the "Save" button.
-  - Your site URL will be highligthed in green and ready un a few minutes.
+  - Your site URL will be highlighted in green and ready un a few minutes.
 
 ## Resources / Credits / Inspiration
 
@@ -197,9 +195,9 @@ In the contact page the user will find a custom made contact form, with the purp
 - Background images are from unsplash (linked bellow).
 - [W3Schools documentation](https://www.w3schools.com/)
 - [Unsplash](https://unsplash.com/photos/f-TWhXOrLiU)
-- [WebDev-Simplified-course](https://courses.webdevsimplified.com/
+- [WebDev-Simplified-course](<https://courses.webdevsimplified.com/>
 - Love Math project.
 
 ## Acknowledgments
 
-- Thank you to my mentor Brian Macharia for guiding me and for his invaluable advice, and to Eduardo for helping me when I got stuck.
+- Thank you to my mentor Brian Macharia for guiding me and for his invaluable advice, to Senior Software Engineer and friend Eduardo Gonzalez for helping me in a moment when I got stuck, and  to the slack community of Code Institute, they are just great.
