@@ -12,7 +12,7 @@ This Website is the 2st out of five Personal Projects for the Code Institute's  
 with e-Commerce applications. It is built using HTML5, CSS and vanilla JAVASCRIPT
 The last update to this file was: **JuLY 8, 2022**
 
-This is an educational online quiz that will help the user to sharpen or to learn new professional cooking terminology.
+This project is an educational online quiz that will help the user to sharpen or to learn new professional cooking terminology.
 
 ## Target user
 
@@ -57,6 +57,7 @@ The website is one page fully responsive layout.
 ### Home page
 
 The user will be greated with full page image of a wooden table on top of which the is a chef knife on the bottom left corner and a bunch of cooking herbs on the top right corner of the screen, there is also a main heading with the title 'cooking quiz' making it clear to the user  of what the website is about. Bellow the heading there is a username input that the user is required to fill in.
+
 ![Home page nav](#)                    ((((((RESPONSIVE SLIDE NAVIGATION---- WORK I PROGRESS - BRANCHING))))))
 
 ### About section
@@ -71,6 +72,7 @@ Below  that is a detailed description and images of the 8 more important steps t
 ### Contact page
 
 In the contact page the user will find a custom made contact form, with the purpose of facilitating the user with a tool to communicate and express his/her opinion or suggestions.        (((((((((( CONTACT FORM - WITH VALIDATION --- WORK IN PROGRESS - BRANCHING)))))))))))))))))
+
 ![contact form](#)
 
 ## Technologies
@@ -121,7 +123,7 @@ In the contact page the user will find a custom made contact form, with the purp
 
   - Input fields in the form are working as expected, eg. if user miss to fill a required field an error message pops up.
 
-  - When the form is filled correctly a new window opens confirming that the form has been correctly submitted. 
+  - When the form is filled correctly a new window opens confirming that the form has been correctly submitted.
 
 - ### HTML and CSS
 
@@ -153,27 +155,29 @@ In the contact page the user will find a custom made contact form, with the purp
 
   - Lighthouse Test
 
-    - ![lighthouse test]()
+    - ![lighthouse test](readme-images/lighthouse-test.png)
 
   - Compability test
 
-    - The website had been tested on windows-10, Mac Os, Android phone, with no errors reported.
+    - The website had been tested on Windows-10, Mac Os, Android phone, Safari, Google Chrome with no errors reported.
 
 ### Bugs report
 
 - lighthouse reported missing label in input field.
 
-  - solution: added width and height measurements and change image extention to .webp.
+  - solution: added width and height measurements and change image extension to .webp.
 
 - Error on planing initial layout and  i couldn't make it work in mobile screen size.
 
-  - solution: started the proyect with a mobile first aproach.
+  - solution: started the project with a mobile first approach.
 
 ## Wireframe
 
-- Final product had changed from the initial plan to improve design and functionality.
+- It has been some changes from the initial sketche.
 
-  - ![Wireframe](readme-images/wireframe-desktop.png)
+  - ![Wireframe](readme-images/balsamiq-website.png)
+  - ![Wireframe](readme-images/balsamiq-tablet.png)
+  - ![Wireframe](readme-images/balsamiq-mobile.png)
 
 ## Deployment
 
@@ -189,23 +193,13 @@ In the contact page the user will find a custom made contact form, with the purp
 
 ## Resources / Credits / Inspiration
 
-- The project that the website is based on, it's been  done by myself.
-- The video included by Marshalls (linked bellow) is the one i used as a reference to learn how to install artificial grass.
-- Header and background images are from unsplash (linked bellow).
-- Step by step pictures are from the actual DIY project and taken by me.( except three screenshot from the video, for clarity reasons.)
-- Responsive iframe video idea is from Hayden Adams and adapted to suit the site requirements.(linked bellow)
-- About section is based on wikipedia (linked bellow).
-- [W3Schools](https://www.w3schools.com/)
-- [Kevin Powell](https://www.youtube.com/watch?v=VQraviuwbzU&t=329s)
-- [Haydn Adams](https://www.youtube.com/watch?v=0L8cQ9nRtuE)
-- [Marshalls](https://www.youtube.com/watch?v=gAjIVEmackw&t=2s)
-- [Wikipedia](https://en.wikipedia.org/wiki/Artificial_turf)
-- [Stackoverflow](https://stackoverflow.com/)
-- [Unsplash](https://unsplash.com/photos/eYVCbkNbfvg)
-- [Google maps](https://www.google.com/maps/search/artificial+grass+material/@53.6904225,-6.5434821,10z/data=!3m1!4b1)
-- Love Running project.
-- Coders Shop project.
+- The theme of the project is inspired on my background.
+- Background images are from unsplash (linked bellow).
+- [W3Schools documentation](https://www.w3schools.com/)
+- [Unsplash](https://unsplash.com/photos/f-TWhXOrLiU)
+- [WebDev-Simplified-course](https://courses.webdevsimplified.com/
+- Love Math project.
 
 ## Acknowledgments
 
-- Thank you to my mentor Brian Macharia for giving me good feedback and pointing me on the right direction., and my collegues and slack comunity at Code Institute.
+- Thank you to my mentor Brian Macharia for guiding me and for his invaluable advice, and to Eduardo for helping me when I got stuck.
