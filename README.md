@@ -196,6 +196,7 @@ In the contact page the user will find a custom made contact form, with the purp
 - [W3Schools documentation](https://www.w3schools.com/)
 - [Unsplash](https://unsplash.com/photos/f-TWhXOrLiU)
 - [WebDev-Simplified-course](<https://courses.webdevsimplified.com/>
+  - Modal is from one of the exercises I did during the course.
 - Love Math project.
 
 ## Acknowledgments

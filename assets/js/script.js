@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
-
-// Variable containing the quiz questions
-
+/**
+ * @const {gameData} Quiz data base.
+ */
 const gameData = [
   {
     question:
@@ -64,9 +64,9 @@ const gameData = [
     correct: 1,
   },
 ];
-
-// Variables of Selected elements
-
+/**
+ * Variables of Selected HTML elements
+ */
 const bannerText = document.querySelector('#banner');
 const userNameContainer = document.querySelector('#user-name-container');
 const welcomeText = document.querySelector('#welcomeText');
@@ -84,17 +84,13 @@ const answer1 = document.querySelector('#answer1');
 const answer2 = document.querySelector('#answer2');
 const answer3 = document.querySelector('#answer3');
 const answer4 = document.querySelector('#answer4');
-
 let scoreIndex = 0;
 let questionIndex = 0;
-
 //  // Wait for the DOM to finish loading before running the game.
-
 document.addEventListener('DOMContentLoaded', () => {
   userName.focus(), (feedbackText.textContent = '');
 });
 //  Event listeners control buttons
-
 startButton.addEventListener('click', e => {
   e.preventDefault(), validateUser();
 });
@@ -103,17 +99,15 @@ userName.addEventListener('keydown', e => {
     validateUser();
   }
 });
-
 nextButton.addEventListener('click', () => {
   next();
 });
-
 tryAgainButton.addEventListener('click', () => {
   location.reload();
 });
-
 /**
  * Validates that username input is not left empty.
+ * Change color element to red if there is an attempt of leaving it empty.
  */
 function validateUser() {
   const userVal = document.querySelector('#username');
@@ -125,7 +119,7 @@ function validateUser() {
   }
 }
 /**
- * Activate answer buttons individually.
+ * Add evenListener to answer buttons select each individually by their ID.
  */
 function activateButtons() {
   answersContainer.querySelectorAll('.answer-button').forEach((button, key) => {
@@ -134,7 +128,7 @@ function activateButtons() {
   });
 }
 /**
- * Deactivate answer buttons to prevent answering multiple times the same question.
+ * Remove eventListener after question it is been answered.
  */
 function deactivateButtons() {
   answersContainer.querySelectorAll('.answer-button').forEach((button, key) => {
@@ -142,7 +136,6 @@ function deactivateButtons() {
     button.answerId = key + 1;
   });
 }
-// This functions hide and display DOM elements for user interactivity
 
 function hideQuiz() {
   quizContainer.style.display = 'none';
@@ -174,7 +167,8 @@ function startGame() {
   activateButtons();
   hideNexButton();
   bannerText.textContent = '';
-  welcomeText.textContent = `Hello ${userName.value}, welcome!`;
+  welcomeText.textContent = `Hello ${userName.value},
+welcome !`;
   userNameContainer.style.display = 'none';
   tryAgainButton.style.display = 'none';
   displayQuiz();
@@ -186,9 +180,9 @@ function startGame() {
 function startQuiz() {
   const currentGameData = gameData[questionIndex];
   if (questionIndex < gameData.length) {
-    questionText.innerText = `${questionIndex + 1}. ${
-      currentGameData.question
-    }`;
+    questionText.innerText = `${questionIndex + 1}. ${currentGameData.question}
+
+`;
     answer1.innerHTML = currentGameData.answers[0];
     answer2.innerHTML = currentGameData.answers[1];
     answer3.innerHTML = currentGameData.answers[2];
@@ -222,7 +216,6 @@ function selectedAnswer(e) {
   deactivateButtons();
 }
 // Next question
-
 function next() {
   questionIndex++;
   quizContainer.style.backgroundColor = '';
@@ -232,19 +225,17 @@ function next() {
   fullScore();
 }
 /**
- * Calcutaled Score by comparing number questions that had been answered correctly against the total amount.
+ * Calculates Score by comparing number questions that had been answered correctly against the total amount.
  */
 function currentScore() {
   scoreCard.textContent = `${scoreIndex} / ${gameData.length}`;
 }
 // Displays a thank you message using the user name.
-
 function thankYouMessage() {
-  feedbackText.textContent = `Thank you for taking my Quiz ${userName.value}!`;
+  feedbackText.textContent = `Thank you for taking my Quiz ${userName.value} !`;
 }
-
 /**
- * This will display a Modal  message if the user answers all questions and them all are right.
+ * This will display a Modal  message if the user answers all questions correctly.
  */
 function fullScore() {
   if (scoreIndex === gameData.length) {
@@ -259,5 +250,4 @@ function fullScore() {
     }, 3300);
   }
 }
-
 startQuiz();
