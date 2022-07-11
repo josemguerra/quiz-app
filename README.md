@@ -43,6 +43,7 @@ This project is an educational online quiz that will help the user to sharpen or
 
 - I want to see a feature if I answer all question correctly.
 - I want to be able to contact through social media.
+
 ## Structure
 
 ### Typography
@@ -156,6 +157,9 @@ A modal message will pop congratulating the user if he/she achieve the maximum s
 
 - Lighthouse test reported missing labels in input fields.
   - solution: added labels to input tags.
+
+- Lighthouse performance test on mobile does not passed.
+  - I lightened the size of images but still does not pass.
 
 ## Wireframe
 
