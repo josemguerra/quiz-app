@@ -31,7 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   background-image: url('../images/wooden-surface.webp');
   background-position: left;
   background-repeat: no-repeat;
@@ -62,6 +62,7 @@ input[type='text'] {
 
 #feedback-text {
   font-size: 140%;
+  padding-bottom: 25px;
 }
 
 /*  Quiz area  */
@@ -137,6 +138,9 @@ button.answer-button {
   line-height: 1;
   font-size: 15px;
 }
+.score-card p {
+  align-self: center;
+}
 
 .score-card span {
   display: flex;
@@ -173,10 +177,10 @@ button.answer-button {
   display: block;
 }
 
-/*************  Footer section *************/
+/*  Footer section */
 footer {
-  display: flex;
-  flex-direction: column;
+  bottom: 0;
+  position: fixed;
 }
 .social-links {
   display: flex;
@@ -214,9 +218,5 @@ footer {
 @media screen (max-width: 400px) {
   #quiz-container {
     #margin-bottom: 60px;
-  }
-  footer {
-    position: fixed;
-    bottom: 0;
   }
 }
