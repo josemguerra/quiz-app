@@ -241,7 +241,7 @@ function thankYouMessage() {
 function fullScore() {
   if (scoreIndex === gameData.length) {
     modalMessage.classList.add('active');
-    document.querySelector('footer').style.display = 'none';
+    // document.querySelector('footer').style.display = 'none';
     hideQuiz();
     setTimeout(() => {
       modalMessage.classList.remove('active');

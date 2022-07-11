@@ -42,9 +42,7 @@ This project is an educational online quiz that will help the user to sharpen or
 ### As a returning user
 
 - I want to see a feature if I answer all question correctly.
-- I want to be able to contact through social media.                     ( SOCIAL MEDIA ICONS ---WORK IN PROGRESS - BRANCHING ))))))))
-- I want to be able to fill in a form to ask questions.
-
+- I want to be able to contact through social media.
 ## Structure
 
 ### Typography
@@ -57,9 +55,8 @@ The website is one page with a fully responsive layout.
 
 ### Landing page
 
-The user will land to a page with a full screen image of a wooden table on top of which the is a chef knife on the bottom left corner and a bunch of cooking herbs on the top right corner of the screen, there is also a main heading with the title 'cooking quiz' making it clear to the user  of what the website is about. Bellow the heading there is a username input that the user is required to fill in order to gain access to the quiz. Once filled in and submitted, this data is used to personalized a welcome message for the user.
+The user will land to a page with a full screen image of a wooden table on top of which the is a chef knife on the bottom left corner and a bunch of cooking herbs on the top right corner of the screen, there is also a main heading with the title 'cooking quiz' making it clear to the user  of what the website is about. Bellow the heading there is a username input that the user is required to fill in order to gain access to the quiz. Once filled in and submitted, this data is used to personalized a welcome message for the user.In the bottom of the page the user will find links to the most popular social networks.
 
-![Home page nav](#)                    ((((((RESPONSIVE  NAVIGATION ---- WORK I PROGRESS - BRANCHING))))))
 
 ### Quiz section
 
@@ -68,12 +65,6 @@ This is the main section of the website. The quiz section  will feature a card w
 ### Features
 
 A modal message will pop congratulating the user if he/she achieve the maximum score.
-
-### Contact page
-
-In the contact page the user will find a custom made contact form, with the purpose of facilitating the user with a tool to communicate and express his/her opinion or suggestions.        (((((((((( CONTACT FORM - WITH VALIDATION --- WORK IN PROGRESS - NEW BRANCH)))))))))))))))))
-
-![contact form](#)
 
 ## Technologies
 
@@ -117,13 +108,10 @@ In the contact page the user will find a custom made contact form, with the purp
     - answer buttons
     - next button
     - try again button
-    - username required.
 
-- ### Form
+- ### Username input
 
-  - Input fields in the form are working as expected, eg. if user miss to fill a required field an error message pops up.
-
-  - When the form is filled correctly a new window opens confirming that the form has been correctly submitted.  ((((((((((((WORK IN PROGRESS - NEW BRANCH))))))))))))
+  - Input field in the form are working as expected, eg. if user miss to fill the required field a change of font color will catch user attention to fill the the username input.
 
 - ### HTML and CSS
 
