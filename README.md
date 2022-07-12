@@ -4,7 +4,7 @@
 
 [Live website here](https://josemguerra.github.io/quiz-app/)
 
-![Am I Responsive](/readme-images/am-i-responsive.png)
+![Am I Responsive](readme-images/am-I-responsive.png)
 
 ## Description
 
