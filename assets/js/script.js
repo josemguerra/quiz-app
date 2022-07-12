@@ -109,6 +109,7 @@ nextButton.addEventListener('click', () => {
 tryAgainButton.addEventListener('click', () => {
   location.reload();
 });
+
 /**
  * Validates that username input is not left empty.
  * Change color element to red if there is an attempt of leaving it empty.
@@ -141,7 +142,12 @@ function deactivateButtons() {
     button.answerId = key + 1;
   });
 }
-
+function displayFooter() {
+  footer.style.display = 'flex';
+}
+function hideFooter() {
+  footer.style.display = 'none';
+}
 function hideQuiz() {
   quizContainer.style.display = 'none';
 }
@@ -176,7 +182,7 @@ function startGame() {
 welcome!`;
   userNameContainer.style.display = 'none';
   tryAgainButton.style.display = 'none';
-  document.querySelector('footer').style.display = 'none';
+  // document.querySelector('footer').style.display = 'none';
   displayQuiz();
 }
 /**
@@ -260,7 +266,7 @@ function fullScore() {
     setTimeout(() => {
       displayQuiz();
       thankYouMessage();
-      document.querySelector('footer').style.display = 'block';
+      // document.querySelector('footer').style.display = 'block';
     }, 3300);
   }
 }
