@@ -86,11 +86,15 @@ const answer3 = document.querySelector('#answer3');
 const answer4 = document.querySelector('#answer4');
 let scoreIndex = 0;
 let questionIndex = 0;
-//  // Wait for the DOM to finish loading before running the game.
+/**
+ * Wait for the DOM to finish loading before running the game.
+ */
 document.addEventListener('DOMContentLoaded', () => {
   userName.focus(), (feedbackText.textContent = '');
 });
-//  Event listeners control buttons
+/**
+ *  Event listeners control buttons
+ */
 startButton.addEventListener('click', e => {
   e.preventDefault(), validateUser();
 });
@@ -108,10 +112,11 @@ tryAgainButton.addEventListener('click', () => {
 /**
  * Validates that username input is not left empty.
  * Change color element to red if there is an attempt of leaving it empty.
+ * Trim() input so it does not validate empty spaces.
  */
 function validateUser() {
   const userVal = document.querySelector('#username');
-  if (userVal.value == '') {
+  if (userVal.value.trim() == '') {
     document.getElementById('welcomeText').style.color = 'red';
   } else {
     document.getElementById('welcomeText').style.color = 'black';
@@ -216,7 +221,9 @@ function selectedAnswer(e) {
   displayNexButton();
   deactivateButtons();
 }
-// Next question
+/**
+ * Next Question
+ */
 function next() {
   questionIndex++;
   quizContainer.style.backgroundColor = '';
@@ -231,7 +238,9 @@ function next() {
 function currentScore() {
   scoreCard.textContent = `${scoreIndex}/${gameData.length}`;
 }
-// Displays a thank you message using the user name.
+/**
+ * Displays a thank you message using the user name.
+ */
 function thankYouMessage() {
   feedbackText.textContent = `Thank you for taking my Quiz ${userName.value}!`;
 }
@@ -241,7 +250,9 @@ function thankYouMessage() {
 function fullScore() {
   if (scoreIndex === gameData.length) {
     modalMessage.classList.add('active');
-    // document.querySelector('footer').style.display = 'none';
+    /**
+     * document.querySelector('footer').style.display = 'none';
+     */
     hideQuiz();
     setTimeout(() => {
       modalMessage.classList.remove('active');
