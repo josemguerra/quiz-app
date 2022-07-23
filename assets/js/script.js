@@ -92,38 +92,35 @@ let questionIndex = 0;
 document.addEventListener('DOMContentLoaded', () => {
   userName.focus(), (feedbackText.textContent = '');
 });
-/**
- *  Event listeners control buttons
- */
-startButton.addEventListener('click', e => {
-  e.preventDefault(), validateUser();
-});
-userName.addEventListener('keydown', e => {
-  if (e.key === 'Enter') {
-    validateUser();
-  }
-});
-nextButton.addEventListener('click', () => {
-  next();
-});
-tryAgainButton.addEventListener('click', () => {
-  location.reload();
-});
 
 /**
  * Validates that username input is not left empty.
- * Change color element to red if there is an attempt of leaving it empty.
+ * Change heading element color to red if there is an attempt of leaving it
+ * empty.
  * Trim() input so it does not validate with space key.
  */
-function validateUser() {
-  const userVal = document.querySelector('#username');
-  if (userVal.value.trim() == '') {
-    document.getElementById('welcomeText').style.color = 'red';
-  } else {
-    document.getElementById('welcomeText').style.color = 'black';
-    startGame();
-  }
+function start() {
+  startButton.addEventListener('click', e => {
+    if (userName.value.trim() == '') {
+      document.getElementById('welcomeText').style.color = 'red';
+    } else {
+      document.getElementById('welcomeText').style.color = 'black';
+      startGame();
+      console.log('Valid username!');
+    }
+    e.preventDefault();
+  });
 }
+start();
+
+/**
+ *  Event listeners control buttons
+ */
+// userName.addEventListener('keydown', e => {
+//   if (e.key === 'Enter') {
+//   }
+// });
+
 /**
  * Add evenListener to answer buttons select each individually by their ID.
  */
@@ -134,7 +131,7 @@ function activateButtons() {
   });
 }
 /**
- * Remove eventListener after question  has been answered.
+ * Remove eventListener after question has been answered.
  */
 function deactivateButtons() {
   answersContainer.querySelectorAll('.answer-button').forEach((button, key) => {
@@ -179,8 +176,8 @@ function startGame() {
   activateButtons();
   hideNexButton();
   bannerText.textContent = '';
-  welcomeText.textContent = `Hello ${userName.value},
-welcome!`;
+  welcomeText.textContent = '';
+  feedbackText.textContent = `Hello ${userName.value}!`;
   userNameContainer.style.display = 'none';
   tryAgainButton.style.display = 'none';
   displayQuiz();
@@ -206,9 +203,10 @@ function startQuiz() {
     answer4.innerHTML = currentGameData.answers[3];
   } else {
     hideAnswerContainer();
-    questionText.innerText = 'Quiz Completed!';
-    welcomeText.textContent = '';
     hideNexButton();
+    questionText.style.display = 'none';
+    feedbackText.innerText = 'Quiz Completed!';
+    welcomeText.textContent = '';
     tryAgainButton.style.display = 'flex';
   }
 }
@@ -233,16 +231,39 @@ function selectedAnswer(e) {
   deactivateButtons();
 }
 /**
- * Next Question
+ * Next Question index.
+ * Reset quiz container background color.
+ * Call hide next button.
+ * Call activate question buttons.
+ * Call full Score if full score is achieved.
+ *
  */
 function next() {
-  questionIndex++;
-  quizContainer.style.backgroundColor = '';
-  activateButtons();
-  hideNexButton();
-  startQuiz();
-  fullScore();
+  nextButton.addEventListener('click', () => {
+    questionIndex++;
+    quizContainer.style.backgroundColor = '';
+    activateButtons();
+    hideNexButton();
+    startQuiz();
+    fullScore();
+  });
 }
+next();
+
+function restart() {
+  tryAgainButton.addEventListener('click', () => {
+    startGame();
+    questionText.style.display = 'flex';
+    displayQuiz();
+    displayAnswerContainer();
+    startQuiz();
+    currentScore();
+    questionIndex = 0;
+    scoreIndex = 0;
+  });
+}
+restart();
+
 /**
  * Calculates Score by comparing number questions that had been answered correctly against the total amount.
  */
