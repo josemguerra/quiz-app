@@ -113,7 +113,7 @@ tryAgainButton.addEventListener('click', () => {
 /**
  * Validates that username input is not left empty.
  * Change color element to red if there is an attempt of leaving it empty.
- * Trim() input so it does not validate empty spaces.
+ * Trim() input so it does not validate with space key.
  */
 function validateUser() {
   const userVal = document.querySelector('#username');
@@ -134,7 +134,7 @@ function activateButtons() {
   });
 }
 /**
- * Remove eventListener after question it is been answered.
+ * Remove eventListener after question  has been answered.
  */
 function deactivateButtons() {
   answersContainer.querySelectorAll('.answer-button').forEach((button, key) => {
@@ -142,12 +142,7 @@ function deactivateButtons() {
     button.answerId = key + 1;
   });
 }
-function displayFooter() {
-  footer.style.display = 'flex';
-}
-function hideFooter() {
-  footer.style.display = 'none';
-}
+
 function hideQuiz() {
   quizContainer.style.display = 'none';
 }
@@ -155,6 +150,12 @@ hideQuiz();
 
 function displayQuiz() {
   quizContainer.style.display = 'flex';
+}
+function hideAnswerContainer() {
+  answersContainer.style.display = 'none';
+}
+function displayAnswerContainer() {
+  answersContainer.style.display = 'flex';
 }
 /**
  * This hides Next button in between question to avoid skipping question without answering them.
@@ -182,9 +183,13 @@ function startGame() {
 welcome!`;
   userNameContainer.style.display = 'none';
   tryAgainButton.style.display = 'none';
-  // document.querySelector('footer').style.display = 'none';
   displayQuiz();
 }
+/**
+ * Function to shuffle questions
+ */
+const shuffleData = gameData.sort(() => Math.random() - 0.5);
+
 /**
  * This will initiate the quiz iterating through questions and answers.
  *
@@ -200,7 +205,7 @@ function startQuiz() {
     answer3.innerHTML = currentGameData.answers[2];
     answer4.innerHTML = currentGameData.answers[3];
   } else {
-    answersContainer.style.display = 'none';
+    hideAnswerContainer();
     questionText.innerText = 'Quiz Completed!';
     welcomeText.textContent = '';
     hideNexButton();
@@ -256,9 +261,6 @@ function thankYouMessage() {
 function fullScore() {
   if (scoreIndex === gameData.length) {
     modalMessage.classList.add('active');
-    /**
-     * document.querySelector('footer').style.display = 'none';
-     */
     hideQuiz();
     setTimeout(() => {
       modalMessage.classList.remove('active');
@@ -266,7 +268,6 @@ function fullScore() {
     setTimeout(() => {
       displayQuiz();
       thankYouMessage();
-      // document.querySelector('footer').style.display = 'block';
     }, 3300);
   }
 }

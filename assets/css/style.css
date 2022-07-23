@@ -7,7 +7,7 @@
   --grey-shadow: #747272a0;
   --correct-answers: #20aa20;
   --bright-green: #22d21f;
-  --faded-blue: #01355385;
+  --faded-blue: #013553f9;
   --wrong-answer: #f40103;
   --orange-button: #f67945;
   --green-button: #8ab444;
@@ -26,6 +26,7 @@ body {
   color: var(--black);
   width: 100vw;
   height: 100vh;
+  margin: 0 auto;
   max-width: 1600px;
   display: flex;
   flex-direction: column;
@@ -137,6 +138,7 @@ button.answer-button {
   cursor: pointer;
   box-shadow: 0 7px #747272b7;
 }
+
 #start-button:active,
 #reload-button:active,
 #next-button:active {
