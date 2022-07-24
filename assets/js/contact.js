@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const slideNav = document.querySelector('#slideNav');
 const openBtn = document.querySelector('.open-button');
 const closeBtn = document.querySelector('.close-button');

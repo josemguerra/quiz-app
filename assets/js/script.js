@@ -96,11 +96,14 @@ let questionIndex = 0;
 /**
  * Wait for the DOM to finish loading before running the game.
  */
-document.addEventListener('DOMContentLoaded', () => {
-  userName.focus(),
-    (feedbackText.textContent = ''),
-    (aboutText.style.display = 'none');
-});
+function loadDom() {
+  document.addEventListener('DOMContentLoaded', () => {
+    userName.focus(),
+      (feedbackText.textContent = ''),
+      (aboutText.style.display = 'none');
+  });
+}
+loadDom();
 /**
  * Nav bar
  */
@@ -226,17 +229,15 @@ function startGame() {
   tryAgainButton.style.display = 'none';
   displayQuiz();
 }
-/**
- * Function to shuffle questions
- */
-const shuffleData = gameData.sort(() => Math.random() - 0.5);
 
 /**
  * This will initiate the quiz iterating through questions and answers.
+ * Shuffle questions.
  *
  */
 function startQuiz() {
-  const currentGameData = gameData[questionIndex];
+  const shuffleData = gameData.sort(() => Math.random() - 0.5);
+  const currentGameData = shuffleData[questionIndex];
   if (questionIndex < gameData.length) {
     questionText.innerText = `${questionIndex + 1}. ${currentGameData.question}
 

@@ -360,3 +360,14 @@ footer {
 .errors-container.show {
   display: block;
 }
+
+/* Thank you html */
+
+#form-thanks {
+  text-align: center;
+}
+.thank-you-back-home {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
