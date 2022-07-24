@@ -87,6 +87,7 @@ const answer1 = document.querySelector('#answer1');
 const answer2 = document.querySelector('#answer2');
 const answer3 = document.querySelector('#answer3');
 const answer4 = document.querySelector('#answer4');
+
 let scoreIndex = 0;
 let questionIndex = 0;
 /**
@@ -96,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   userName.focus(), (feedbackText.textContent = '');
 });
 /**
- * Nav bar    ADD EVENT LISTENERS
+ * Nav bar
  */
 function openNav() {
   openBtn.addEventListener('click', e => {
@@ -122,6 +123,7 @@ closeNav();
  */
 function start() {
   startButton.addEventListener('click', e => {
+    e.preventDefault();
     if (userName.value.trim() == '') {
       document.getElementById('welcomeText').style.color = 'red';
     } else {
@@ -129,7 +131,6 @@ function start() {
       startGame();
       console.log('Valid username!');
     }
-    e.preventDefault();
   });
 }
 start();

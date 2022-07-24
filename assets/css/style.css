@@ -8,8 +8,8 @@
   --correct-answers: #20aa20;
   --bright-green: #22d21f;
   --faded-blue: #013553f9;
-  --wrong-answer: #f40103;
-  --orange-button: #f67945;
+  --wrong-answer: #ff0000;
+  --orange-button: #d83c00;
   --green-button: #8ab444;
   --white: #fff;
 }
@@ -103,13 +103,15 @@ header {
   align-items: center;
   padding-top: 20px;
 }
-
+input[type='email'],
+textarea,
 input[type='text'] {
-  width: 80%;
+  width: 100%;
+  max-width: 300px;
   padding: 10px 15px;
+  outline: none;
   border: none;
   border-radius: 4px;
-  font-size: 0.75rem;
 }
 
 #feedback-text {
@@ -162,11 +164,11 @@ button.answer-button {
   color: var(--black);
   font-weight: bold;
   background-color: var(--beige);
-  box-shadow: 0px 7px #747272b7;
+  box-shadow: 0px 6px #747272b7;
 }
 .answer-button:active {
   background-color: #f4c536;
-  box-shadow: 0 4px #747272b7;
+  box-shadow: 0 3px #747272b7;
   transform: translateY(3px);
 }
 
@@ -175,26 +177,27 @@ button.answer-button {
   display: flex;
   align-self: center;
 }
-
+.thank-you-back-home,
+.contact-button button,
 #start-button,
 #reload-button,
 #next-button {
   font-size: small;
   font-weight: bold;
-  margin: 1rem;
-  background-color: var(--green-leaf);
+  margin: 1rem auto;
+  background-color: var(--light-brown);
   padding: 0.7rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0 7px #747272b7;
+  box-shadow: 0 6px #747272b7;
 }
-
+.contact-button button:active,
 #start-button:active,
 #reload-button:active,
 #next-button:active {
   background-color: #20aa20;
-  box-shadow: 0 4px #747272b7;
+  box-shadow: 0 3px #747272b7;
   transform: translateY(3px);
 }
 /* score card */
@@ -248,6 +251,7 @@ button.answer-button {
 
 /*  Footer section */
 footer {
+  position: fixed;
   position: absolute;
   height: 10vh;
   z-index: 4;
@@ -292,4 +296,45 @@ footer {
   padding: 0.5rem;
   font-weight: bold;
   color: var(--grey-shadow);
+}
+/* Contact form */
+
+.errors-container {
+  background-color: #013553;
+  max-width: 450px;
+  width: 80%;
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--beige);
+  margin-bottom: 1rem;
+}
+
+#form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.error-title {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.errors-list {
+  margin: 0;
+  padding-left: 15px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.errors-container {
+  display: none;
+}
+
+.errors-container.show {
+  display: block;
 }

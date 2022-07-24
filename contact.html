@@ -22,8 +22,8 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Script link is defer ensuring the page is completely downloaded before being executed -->
-    <script src="assets/js/script.js" defer></script>
-    <title>Quiz App</title>
+    <script src="assets/js/contact.js" defer></script>
+    <title>Contact form</title>
   </head>
 
   <body>
@@ -35,90 +35,37 @@
       <a href="#" class="close-button"><i class="fa-solid fa-times"></i></a>
       <a href="index.html">Home</a>
       <a href="#">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="#">Contact</a>
     </nav>
-    <!-- Username input -->
-    <header id="header">
-      <div id="introduction">
-        <h1 id="banner">Cooking Terms Quiz</h1>
-        <h2 id="welcomeText">Please enter your name</h2>
-        <h3 id="feedback-text">Thank you for taking my quiz</h3>
-      </div>
-      <!-- Username input and submit button -->
-
-      <div id="user-name-container">
-        <label for="username">
-          <input
-            type="text"
-            id="username"
-            name="username"
-            aria-label="username input box"
-        /></label>
-        <button type="submit" id="start-button">START</button>
-      </div>
-    </header>
-    <!-- Modal  -->
-    <div id="modal-message">
-      <div class="alert-title">Congratulations!!</div>
-      All you answers are correct!!
+    <!-- Contact form -->
+    <div class="errors-container">
+      <h3 class="error-title">Error</h3>
+      <ul class="errors-list"></ul>
     </div>
-    <!-- Quiz area -->
-    <div id="quiz-container">
-      <div id="question">This is the question</div>
-      <div id="answers-container">
-        <button
-          id="answer1"
-          class="answer-button active"
-          aria-label="answer 1 button"
-        >
-          Answer 1
-        </button>
-        <button
-          id="answer2"
-          class="answer-button active"
-          aria-label="answer 2 button"
-        >
-          Answer 2
-        </button>
-        <button
-          id="answer3"
-          class="answer-button active"
-          aria-label="answer 3 button"
-        >
-          Answer 3
-        </button>
-        <button
-          id="answer4"
-          class="answer-button active"
-          aria-label="answer 4 button"
-        >
-          Answer 4
-        </button>
-      </div>
-      <!-- Control and score card -->
+    <form action="thank-you.html" id="form">
+      <h1>Contact:</h1>
 
-      <div id="control-buttons">
-        <div class="score-card">
-          <p>score:</p>
-          <span id="score-card">0</span>
-        </div>
-        <label for="next-button">
-          <input
-            type="button"
-            id="next-button"
-            value="NEXT"
-            aria-label="next button"
-        /></label>
-        <label for="reload-button">
-          <input
-            type="button"
-            id="reload-button"
-            value="TRY AGAIN"
-            aria-label="reload button"
-        /></label>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name" />
       </div>
-    </div>
-    <!-- Social networks -->
+
+      <div class="form-group">
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="user_email" />
+      </div>
+
+      <div class="form-group">
+        <label for="msg">Your message:</label>
+        <textarea id="msg" name="user_message"></textarea>
+      </div>
+
+      <div class="contact-button">
+        <button type="submit">Send your message</button>
+      </div>
+    </form>
+
+    <!-- social networks -->
     <footer>
       <div id="center-social">
         <ul class="social-links">
