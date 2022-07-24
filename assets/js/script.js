@@ -70,6 +70,9 @@ const gameData = [
 const slideNav = document.querySelector('#slideNav');
 const openBtn = document.querySelector('.open-button');
 const closeBtn = document.querySelector('.close-button');
+const about = document.querySelector('.about');
+const aboutText = document.querySelector('.about-text');
+const closeAbout = document.querySelector('.close-about');
 const bannerText = document.querySelector('#banner');
 const userNameContainer = document.querySelector('#user-name-container');
 const welcomeText = document.querySelector('#welcomeText');
@@ -94,7 +97,9 @@ let questionIndex = 0;
  * Wait for the DOM to finish loading before running the game.
  */
 document.addEventListener('DOMContentLoaded', () => {
-  userName.focus(), (feedbackText.textContent = '');
+  userName.focus(),
+    (feedbackText.textContent = ''),
+    (aboutText.style.display = 'none');
 });
 /**
  * Nav bar
@@ -103,6 +108,12 @@ function openNav() {
   openBtn.addEventListener('click', e => {
     slideNav.style.width = '200px';
     openBtn.style.display = 'none';
+    setTimeout(() => {
+      slideNav.style.width = '0';
+    }, 4500);
+    setTimeout(() => {
+      openBtn.style.display = 'block';
+    }, 4800);
   });
 }
 openNav();
@@ -114,6 +125,22 @@ function closeNav() {
   });
 }
 closeNav();
+/**
+ * About section.
+ * Open and close modal.
+ */
+function aboutSection() {
+  about.addEventListener('click', e => {
+    aboutText.style.display = 'block';
+    setTimeout(() => {
+      aboutText.style.display = 'none';
+    }, 12000);
+  });
+  closeAbout.addEventListener('click', e => {
+    aboutText.style.display = 'none';
+  });
+}
+aboutSection();
 
 /**
  * Validates that username input is not left empty.
@@ -138,11 +165,6 @@ start();
 /**
  *  Event listeners control buttons
  */
-// userName.addEventListener('keydown', e => {
-//   if (e.key === 'Enter') {
-//   }
-// });
-
 /**
  * Add evenListener to answer buttons select each individually by their ID.
  */

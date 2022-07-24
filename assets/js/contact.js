@@ -43,7 +43,7 @@ form.addEventListener('submit', e => {
   if (emailInput.value.length < 10) {
     errorMessages.push('You have entered an invalid email address');
   }
-  if (messageInput.value.length < 80) {
+  if (messageInput.value.length < 60) {
     errorMessages.push('Your message have to be at least 80 characters long');
   }
   /**

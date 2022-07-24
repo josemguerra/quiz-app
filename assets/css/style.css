@@ -89,6 +89,28 @@ body {
   margin-left: 50px;
 }
 
+/* About section */
+.about-text {
+  z-index: 10;
+  position: absolute;
+  top: 12vh;
+  left: 18vw;
+  width: 80%;
+  max-width: 350px;
+  background-color: #013553;
+  color: var(--beige);
+  padding: 1rem;
+  border-radius: 4px;
+}
+.close-about {
+  position: absolute;
+  text-align: right;
+  font-size: 200%;
+  float: right;
+  top: 0;
+  right: 0.8rem;
+}
+
 /* Header and Input section */
 header {
   font-size: 100%;
@@ -304,7 +326,7 @@ footer {
   max-width: 450px;
   width: 80%;
   border-radius: 8px;
-  padding: 10px;
+  padding: 1rem;
   color: var(--beige);
   margin-bottom: 1rem;
 }
@@ -321,7 +343,7 @@ footer {
 
 .errors-list {
   margin: 0;
-  padding-left: 15px;
+  padding-left: 0.5rem;
 }
 
 .form-group {
