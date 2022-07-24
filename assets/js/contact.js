@@ -45,7 +45,7 @@ form.addEventListener('submit', e => {
     errorMessages.push('You have entered an invalid email address');
   }
   if (messageInput.value.length < 60) {
-    errorMessages.push('Your message have to be at least 80 characters long');
+    errorMessages.push('Your message have to be at least 60 characters long');
   }
   /**
    * If there are any errors then prevent the form from submitting and show the

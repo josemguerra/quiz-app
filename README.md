@@ -10,7 +10,7 @@
 
 This Website is the 2st out of five Personal Projects for the Code Institute's  Web Developer course
 with e-Commerce applications. It is built using HTML5, CSS and vanilla JAVASCRIPT
-The last update to this file was: **JuLY 8, 2022**
+The last update to this file was: **JuLY 24, 2022**
 
 This project is an educational online quiz that will help the user to sharpen or even learn new professional cookery terminology.
 
@@ -43,31 +43,59 @@ This project is an educational online quiz that will help the user to sharpen or
 
 - I want to see a feature if I answer all question correctly.
 - I want to be able to contact through social media.
+- I want to be able to fill a contact form to ask questions or make suggestions.
 
 ## Structure
 
 ### Typography
 
-Main font used in the App is Space Mono which has excellent readability features and compliments the Concert One Cursive font of the headings.
+Main font used in the App is Space Mono which has excellent readability features and compliments the
+Concert One Cursive font of the headings.
 
 ### Layout
 
-The website is one page with a fully responsive layout.
+The website is two pages with a fully responsive layout.
 
 ### Landing page
 
-The user will land to a page with a full screen image of a wooden table on top of which the is a chef knife on the bottom left corner and a bunch of cooking herbs on the top right corner of the screen, there is also a main heading with the title 'cooking quiz' making it clear to the user  of what the website is about. Bellow the heading there is a username input that the user is required to fill in order to gain access to the quiz. Once filled in and submitted, this data is used to personalized a welcome message for the user.In the bottom of the page the user will find links to the most popular social networks.
+The user will land to a page with a full screen image of a wooden table on top of which the is a
+chef knife on the bottom left corner and a bunch of cooking herbs on the top right corner of the screen,
+there is also a main heading with the title 'cooking quiz' making it clear to the user  of what the website
+is about. Bellow the heading there is a username input that the user is required to fill in order to gain access
+to the quiz. Once filled in and submitted, this data is used to personalized a welcome message for the user.In the
+bottom of the page the user will find links to the most popular social networks.
 
+### Animated navigation menu
+
+The site has an overlay side menu, activated my clicking on a hamburger icon situated at the top left of every page.
+The menu has a home link that will take the user to the home page,
+an About link that when clicked pop up a modal with information about the quiz.
+A contact link that will take the user to a fully validated contact form page.
+It also counts with timeout functionality for a better user experience in the menu and about section..
 
 ### Quiz section
 
-This is the main section of the website. The quiz section  will feature a card with a question on the top and four possible answers encapsulated in the form of a button. When the user press a button with the selected answer will get immediate feedback. The background will turn green if the answer is correct and red is the answer is incorrect. The score will also be updated showing the user newly achieved score and the total amount of question. The button next will appear so the user can move onto the next question and so on.
+This is the main section of the website. The quiz section  will feature a card with a question on the top and four
+possible answers encapsulated in the form of a button. When the user press a button with the selected answer will get
+immediate feedback. The background will turn green if the answer is correct and red is the answer is incorrect.
+The score will also be updated showing the user newly achieved score and the total amount of question.
+The button next will appear so the user can move onto the next question and so on.
 
 ### Features
 
-A modal message will pop congratulating the user if he/she achieve the maximum score.
+- Scoring system.
+- Input validation for username.
+- Randomize order of questions when user plays again.
+- A modal message will pop congratulating the user if he/she achieve the maximum score.
+- Three steps contact form validation with feedback of the data required.
+
+### Features left to implement
+
+- Larger data base of questions.
 
 ## Technologies
+
+<details>
 
 - [HTML](https://www.w3schools.com/html/default.asp)
   - This project uses html as the mark up language to give structure to the website.
@@ -99,7 +127,11 @@ A modal message will pop congratulating the user if he/she achieve the maximum s
 
   - Is a software that help beautify the code resulting in reducing data an improving performance.
 
+</details>
+
 ## Testing
+
+<details>
 
 - ### Event Listeners
 
@@ -112,7 +144,12 @@ A modal message will pop congratulating the user if he/she achieve the maximum s
 
 - ### Username input
 
-  - Input field in the form are working as expected, eg. if user miss to fill the required field a change of font color will catch user attention to fill the the username input.
+  - Input field in the form are working as expected, eg. if user miss to fill the required
+    field a change of font color will catch user attention to fill the the username input.
+
+- ### Contact form
+
+  - Name, email and textarea inputs have been tested and are working as expected. Validating thar user inputs are correct.
 
 - ### HTML and CSS
 
@@ -161,13 +198,19 @@ A modal message will pop congratulating the user if he/she achieve the maximum s
 - Lighthouse performance test on mobile does not passed.
   - I lightened the size of images but still does not pass.
 
+</details>
+
 ## Wireframe
+
+<details>
 
 - It has been some changes from the initial sketch to improve the visual design.
 
   - ![Wireframe](readme-images/balsamiq-website.png)
   - ![Wireframe](readme-images/balsamiq-tablet.png)
   - ![Wireframe](readme-images/balsamiq-mobile.png)
+
+</details>
 
 ## Deployment
 
@@ -193,4 +236,5 @@ A modal message will pop congratulating the user if he/she achieve the maximum s
 
 ## Acknowledgments
 
-- Thank you to my mentor Brian Macharia for guiding me and for his invaluable advice, to Senior Software Engineer and friend Eduardo Gonzalez for helping me in a moment when I got stuck, and  to the slack community of Code Institute, they are just great.
+- Thank you to my mentor Brian Macharia for guiding me and for his invaluable advice, to Senior Software
+Engineer and friend Eduardo Gonzalez for helping me in a moment when I got stuck, and  to the slack community of Code Institute, they are just great.
