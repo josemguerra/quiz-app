@@ -38,6 +38,57 @@ body {
   background-size: cover;
 }
 
+/* navBar BAR */
+
+#ham-bars {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  margin-left: 2vw;
+  font-size: 200%;
+  color: var(--orange-button);
+  cursor: pointer;
+}
+
+#ham-bars:hover {
+  color: var(--green-leaf);
+  transform: rotateY(180deg);
+}
+
+.navBar {
+  height: 90vh;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  transition: 0.8s;
+  padding-top: 50px;
+}
+
+.navBar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 150%;
+  color: var(--orange-button);
+  display: block;
+  transition: 0.3s;
+}
+
+.navBar a:hover {
+  color: var(--green-leaf);
+}
+
+.navBar .close-button {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 200%;
+  margin-left: 50px;
+}
+
 /* Header and Input section */
 header {
   font-size: 100%;
@@ -198,6 +249,8 @@ button.answer-button {
 /*  Footer section */
 footer {
   position: absolute;
+  height: 10vh;
+  z-index: 4;
   bottom: 0;
   left: 0;
   right: 0;

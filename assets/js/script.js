@@ -67,6 +67,9 @@ const gameData = [
 /**
  * Variables of Selected HTML elements
  */
+const slideNav = document.querySelector('#slideNav');
+const openBtn = document.querySelector('.open-button');
+const closeBtn = document.querySelector('.close-button');
 const bannerText = document.querySelector('#banner');
 const userNameContainer = document.querySelector('#user-name-container');
 const welcomeText = document.querySelector('#welcomeText');
@@ -92,6 +95,24 @@ let questionIndex = 0;
 document.addEventListener('DOMContentLoaded', () => {
   userName.focus(), (feedbackText.textContent = '');
 });
+/**
+ * Nav bar    ADD EVENT LISTENERS
+ */
+function openNav() {
+  openBtn.addEventListener('click', e => {
+    slideNav.style.width = '200px';
+    openBtn.style.display = 'none';
+  });
+}
+openNav();
+
+function closeNav() {
+  closeBtn.addEventListener('click', e => {
+    slideNav.style.width = '0';
+    openBtn.style.display = 'block';
+  });
+}
+closeNav();
 
 /**
  * Validates that username input is not left empty.
