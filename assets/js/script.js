@@ -230,14 +230,14 @@ function startGame() {
   displayQuiz();
 }
 
+const shuffleData = gameData.sort(() => Math.random() - 0.5);
 /**
  * This will initiate the quiz iterating through questions and answers.
  * Shuffle questions.
  *
  */
 function startQuiz() {
-  const shuffleData = gameData.sort(() => Math.random() - 0.5);
-  const currentGameData = shuffleData[questionIndex];
+  const currentGameData = gameData[questionIndex];
   if (questionIndex < gameData.length) {
     questionText.innerText = `${questionIndex + 1}. ${currentGameData.question}
 

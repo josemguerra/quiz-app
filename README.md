@@ -149,7 +149,7 @@ The button next will appear so the user can move onto the next question and so o
 
 - ### Contact form
 
-  - Name, email and textarea inputs have been tested and are working as expected. Validating thar user inputs are correct.
+  - Name, email and textarea inputs have been tested and are working as expected. Validating that user inputs are correct.
 
 - ### HTML and CSS
 

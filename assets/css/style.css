@@ -56,7 +56,7 @@ body {
 }
 
 .navBar {
-  height: 90vh;
+  height: 86vh;
   width: 0;
   position: fixed;
   z-index: 2;
@@ -94,7 +94,7 @@ body {
   z-index: 10;
   position: absolute;
   top: 12vh;
-  left: 18vw;
+  left: 12vw;
   width: 80%;
   max-width: 350px;
   background-color: #013553;
@@ -145,7 +145,7 @@ input[type='text'] {
 #quiz-container {
   display: flex;
   flex-direction: column;
-  max-width: 650px;
+  max-width: 550px;
   width: 80%;
   margin-bottom: 6rem;
   padding: 15px;
@@ -197,7 +197,6 @@ button.answer-button {
 /* Control buttons  */
 #control-buttons {
   display: flex;
-  align-self: center;
 }
 .thank-you-back-home,
 .contact-button button,
@@ -273,9 +272,8 @@ button.answer-button {
 
 /*  Footer section */
 footer {
-  position: fixed;
   position: absolute;
-  height: 10vh;
+  height: 14vh;
   z-index: 4;
   bottom: 0;
   left: 0;
@@ -291,8 +289,8 @@ footer {
 .social-links {
   display: flex;
   justify-content: center;
-  height: 4vh;
   align-items: center;
+  height: 5vh;
 }
 
 .social-links li {
@@ -333,6 +331,7 @@ footer {
 
 #form {
   margin: 0 auto;
+  font-weight: bolder;
   text-align: center;
 }
 
@@ -368,6 +367,8 @@ footer {
 }
 .thank-you-back-home {
   display: inline-block;
+}
+.thank-you-back-home a {
   text-decoration: none;
   color: black;
 }
