@@ -22,7 +22,9 @@ function start() {
     } else {
       (document.getElementById('welcomeText').style.color = 'black'),
         localStorage.setItem('username', userName.value),
-        (location.href = 'game.html');
+        (location.href = location.href.includes('github')
+          ? '/quiz-app/game.html'
+          : 'game.html');
     }
   });
 }
