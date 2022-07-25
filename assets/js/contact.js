@@ -16,6 +16,12 @@ function openNav() {
   openBtn.addEventListener('click', e => {
     slideNav.style.width = '200px';
     openBtn.style.display = 'none';
+    setTimeout(() => {
+      slideNav.style.width = '0';
+    }, 4500);
+    setTimeout(() => {
+      openBtn.style.display = 'block';
+    }, 4800);
   });
 }
 openNav();

@@ -62,13 +62,13 @@ The user will land to a page with a full screen image of a wooden table on top o
 chef knife on the bottom left corner and a bunch of cooking herbs on the top right corner of the screen,
 there is also a main heading with the title 'cooking quiz' making it clear to the user  of what the website
 is about. Bellow the heading there is a username input that the user is required to fill in order to gain access
-to the quiz. Once filled in and submitted, this data is used to personalized a welcome message for the user.In the
+to the quiz. Once filled in and submitted, this data is used to personalized  welcome message for the user.In the
 bottom of the page the user will find links to the most popular social networks.
 
 ### Animated navigation menu
 
-The site has an overlay side menu, activated my clicking on a hamburger icon situated at the top left of every page.
-The menu has a home link that will take the user to the home page,
+The site has an overlay side menu, activated my clicking on a hamburger icon situated at the top left of game and contact page.
+The menu has a exit link that will take the user to the landing page,
 an About link that when clicked pop up a modal with information about the quiz.
 A contact link that will take the user to a fully validated contact form page.
 It also counts with timeout functionality for a better user experience in the menu and about section..
@@ -86,8 +86,8 @@ The button next will appear so the user can move onto the next question and so o
 - Scoring system.
 - Input validation for username.
 - Randomize order of questions when user plays again.
-- A modal message will pop congratulating the user if he/she achieve the maximum score.
-- Three steps contact form validation with feedback of the data required.
+- A modal message will pop congratulating the user if he/she achieve  the maximum score.
+- A three input fields contact form with validation and feedback of the data required.
 
 ### Features left to implement
 
@@ -144,12 +144,13 @@ The button next will appear so the user can move onto the next question and so o
 
 - ### Username input
 
-  - Input field in the form are working as expected, eg. if user miss to fill the required
-    field a change of font color will catch user attention to fill the the username input.
+  - Input field in the form are working as expected, eg. if user misses to fill the required
+    field a change in font color will catch user attention to fill the the username input.
 
 - ### Contact form
 
   - Name, email and textarea inputs have been tested and are working as expected. Validating that user inputs are correct.
+  - If it is filled correctly will be redirected to a page with a message indicating the form has been sent successfully.
 
 - ### HTML and CSS
 
@@ -197,6 +198,9 @@ The button next will appear so the user can move onto the next question and so o
 
 - Lighthouse performance test on mobile does not passed.
   - I lightened the size of images but still does not pass.
+
+- I detected that random questions were repeating some of the questions unless page was reloaded , so i had to redesign the site, and so the quiz is in it's own html file.
+
 
 </details>
 

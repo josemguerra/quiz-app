@@ -100,7 +100,7 @@ body {
   background-color: #013553;
   color: var(--beige);
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: 1rem 2.4rem;
 }
 .close-about {
   position: absolute;
@@ -323,14 +323,18 @@ footer {
   background-color: #013553;
   max-width: 450px;
   width: 80%;
-  border-radius: 8px;
-  padding: 1rem;
+  border-radius: 1rem 2.5rem;
+  padding-top: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
   color: var(--beige);
   margin-bottom: 1rem;
 }
 
 #form {
   margin: 0 auto;
+  margin-bottom: 4rem;
   font-weight: bolder;
   text-align: center;
 }

@@ -74,11 +74,9 @@ const about = document.querySelector('.about');
 const aboutText = document.querySelector('.about-text');
 const closeAbout = document.querySelector('.close-about');
 const bannerText = document.querySelector('#banner');
-const userNameContainer = document.querySelector('#user-name-container');
 const welcomeText = document.querySelector('#welcomeText');
 const feedbackText = document.querySelector('#feedback-text');
-const userName = document.querySelector('#username');
-const startButton = document.querySelector('#start-button');
+let userName = document.querySelector('#username');
 const nextButton = document.querySelector('#next-button');
 const tryAgainButton = document.querySelector('#reload-button');
 const quizContainer = document.querySelector('#quiz-container');
@@ -91,19 +89,18 @@ const answer2 = document.querySelector('#answer2');
 const answer3 = document.querySelector('#answer3');
 const answer4 = document.querySelector('#answer4');
 
-let scoreIndex = 0;
-let questionIndex = 0;
+let questionIndex, scoreIndex, shuffleData;
+
 /**
  * Wait for the DOM to finish loading before running the game.
  */
 function loadDom() {
   document.addEventListener('DOMContentLoaded', () => {
-    userName.focus(),
-      (feedbackText.textContent = ''),
-      (aboutText.style.display = 'none');
+    aboutText.style.display = 'none';
   });
 }
 loadDom();
+
 /**
  * Nav bar
  */
@@ -146,29 +143,6 @@ function aboutSection() {
 aboutSection();
 
 /**
- * Validates that username input is not left empty.
- * Change heading element color to red if there is an attempt of leaving it
- * empty.
- * Trim() input so it does not validate with space key.
- */
-function start() {
-  startButton.addEventListener('click', e => {
-    e.preventDefault();
-    if (userName.value.trim() == '') {
-      document.getElementById('welcomeText').style.color = 'red';
-    } else {
-      document.getElementById('welcomeText').style.color = 'black';
-      startGame();
-      console.log('Valid username!');
-    }
-  });
-}
-start();
-
-/**
- *  Event listeners control buttons
- */
-/**
  * Add evenListener to answer buttons select each individually by their ID.
  */
 function activateButtons() {
@@ -198,9 +172,7 @@ function displayQuiz() {
 function hideAnswerContainer() {
   answersContainer.style.display = 'none';
 }
-function displayAnswerContainer() {
-  answersContainer.style.display = 'flex';
-}
+
 /**
  * This hides Next button in between question to avoid skipping question without answering them.
  */
@@ -220,17 +192,19 @@ function displayNexButton() {
  * It will hide try again button to avoid page reload without answering all the questions.
  */
 function startGame() {
+  shuffleData = gameData.sort(() => Math.random() - 0.5);
+  questionIndex = 0;
+  scoreIndex = 0;
   activateButtons();
   hideNexButton();
   bannerText.textContent = '';
   welcomeText.textContent = '';
-  feedbackText.textContent = `Hello ${userName.value}!`;
-  userNameContainer.style.display = 'none';
+  userName = localStorage.getItem('username');
+  feedbackText.textContent = `Hello ${userName}, welcome!`;
   tryAgainButton.style.display = 'none';
   displayQuiz();
 }
 
-const shuffleData = gameData.sort(() => Math.random() - 0.5);
 /**
  * This will initiate the quiz iterating through questions and answers.
  * Shuffle questions.
@@ -250,8 +224,8 @@ function startQuiz() {
     hideAnswerContainer();
     hideNexButton();
     questionText.style.display = 'none';
-    feedbackText.innerText = 'Quiz Completed!';
-    welcomeText.textContent = '';
+    feedbackText.innerText = `Thank you for taking my quiz ${userName}`;
+    welcomeText.textContent = 'Quiz Completed!';
     tryAgainButton.style.display = 'flex';
   }
 }
@@ -297,14 +271,8 @@ next();
 
 function restart() {
   tryAgainButton.addEventListener('click', () => {
-    startGame();
-    questionText.style.display = 'flex';
-    displayQuiz();
-    displayAnswerContainer();
-    startQuiz();
-    currentScore();
-    questionIndex = 0;
-    scoreIndex = 0;
+    aboutText.style.display = 'none';
+    window.location.reload();
   });
 }
 restart();
@@ -319,7 +287,7 @@ function currentScore() {
  * Displays a thank you message using the user name.
  */
 function thankYouMessage() {
-  feedbackText.textContent = `Thank you for taking my Quiz ${userName.value}!`;
+  feedbackText.textContent = `Thank you for taking my Quiz ${userName}!`;
 }
 /**
  * This will display a Modal  message if the user answers all questions correctly.
@@ -337,4 +305,5 @@ function fullScore() {
     }, 3300);
   }
 }
+startGame();
 startQuiz();

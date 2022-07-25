@@ -22,32 +22,98 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Script link is defer ensuring the page is completely downloaded before being executed -->
-    <script src="assets/js/index.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
     <title>Quiz App</title>
   </head>
 
   <body>
+    <!-- Navigation  -->
+    <span id="ham-bars" class="open-button"
+      ><i class="fa-solid fa-bars"></i
+    ></span>
+    <nav id="slideNav" class="navBar">
+      <a href="#" class="close-button"><i class="fa-solid fa-times"></i></a>
+      <a href="index.html">Exit</a>
+      <a href="#about" class="about">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div id="about" class="about-text">
+      <p class="close-about"><i class="fa-solid fa-times"></i></p>
+      How much do you know about gastronomy?. Gastronomy is the art of preparing
+      good food for a culinary dining experience. Gastronomy has been described
+      as science and art. If you are interested in food. You certainly must take
+      this great quiz.
+    </div>
+    <!--  -->
     <header id="header">
       <div id="introduction">
         <h1 id="banner">Cooking Terms Quiz</h1>
         <h2 id="welcomeText">Please enter your name</h2>
         <h3 id="feedback-text">Thank you for taking my quiz</h3>
       </div>
-
-      <!-- Username input and submit button -->
-
-      <div id="user-name-container">
-        <label for="username">
-          <input
-            type="text"
-            id="username"
-            name="username"
-            aria-label="username input box"
-        /></label>
-        <span id="start-button">START</span>
-      </div>
     </header>
 
+    <!-- Modal  -->
+    <div id="modal-message">
+      <div class="alert-title">Congratulations!!</div>
+      All you answers are correct!!
+    </div>
+    <!-- Quiz area -->
+    <div id="quiz-container">
+      <div id="question">This is the question</div>
+      <div id="answers-container">
+        <button
+          id="answer1"
+          class="answer-button active"
+          aria-label="answer 1 button"
+        >
+          Answer 1
+        </button>
+        <button
+          id="answer2"
+          class="answer-button active"
+          aria-label="answer 2 button"
+        >
+          Answer 2
+        </button>
+        <button
+          id="answer3"
+          class="answer-button active"
+          aria-label="answer 3 button"
+        >
+          Answer 3
+        </button>
+        <button
+          id="answer4"
+          class="answer-button active"
+          aria-label="answer 4 button"
+        >
+          Answer 4
+        </button>
+      </div>
+      <!-- Control and score card -->
+
+      <div id="control-buttons">
+        <div class="score-card">
+          <p>score:</p>
+          <span id="score-card">0</span>
+        </div>
+        <label for="next-button">
+          <input
+            type="button"
+            id="next-button"
+            value="NEXT"
+            aria-label="next button"
+        /></label>
+        <label for="reload-button">
+          <input
+            type="button"
+            id="reload-button"
+            value="TRY AGAIN"
+            aria-label="reload button"
+        /></label>
+      </div>
+    </div>
     <!-- Social networks -->
     <footer>
       <div id="center-social">
